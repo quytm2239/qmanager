@@ -1,0 +1,11 @@
+F:\VS WS\QManager\QManager\bin\Debug\QManager.exe.config
+F:\VS WS\QManager\QManager\bin\Debug\QManager.exe
+F:\VS WS\QManager\QManager\bin\Debug\QManager.pdb
+F:\VS WS\QManager\QManager\obj\Debug\QManager.csprojResolveAssemblyReference.cache
+F:\VS WS\QManager\QManager\obj\Debug\QManager.Form1.resources
+F:\VS WS\QManager\QManager\obj\Debug\QManager.Properties.Resources.resources
+F:\VS WS\QManager\QManager\obj\Debug\QManager.csproj.GenerateResource.Cache
+F:\VS WS\QManager\QManager\obj\Debug\QManager.csproj.CoreCompileInputs.cache
+F:\VS WS\QManager\QManager\obj\Debug\QManager.exe
+F:\VS WS\QManager\QManager\obj\Debug\QManager.pdb
+F:\VS WS\QManager\QManager\obj\Debug\QManager.Form2.resources
