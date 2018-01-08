@@ -16,7 +16,6 @@ namespace QManager
         private void Form1_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            DBConnection.getInstance();
         }
 
         private void label1_Click(object sender, EventArgs e)
