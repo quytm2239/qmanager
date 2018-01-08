@@ -24,16 +24,14 @@ namespace QManager
 
             mainConnection = new MySqlConnection(connectionStringBuilder.ConnectionString);
             backgroundConnection = new MySqlConnection(connectionStringBuilder.ConnectionString);
+        }
 
+        public void CheckConnectity()
+        {
             try
             {
                 mainConnection.Open();
-
-                MySqlCommand cmd = mainConnection.CreateCommand();
-
-                QueryCommand(cmd);
-                //InsertCommand(cmd, "LOOOO");
-
+                Console.WriteLine("Connected to: " + connectionStringBuilder.Server +":"+ connectionStringBuilder.Port + " SUCCESSFULLY!");
                 mainConnection.Close();
             }
             catch (MySqlException mysqle)
@@ -46,7 +44,7 @@ namespace QManager
             return instance;
         }
 
-        public void QueryCommand(MySqlCommand cmd)
+        public void DoQueryCommand(string commandText, )
         {
             cmd.CommandText = SQLCommands.GET_ALL_TEST;
             cmd.CommandType = CommandType.Text;

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace QManager
 {
     static class Program
@@ -14,6 +10,7 @@ namespace QManager
         [STAThread]
         static void Main()
         {
+            DBConnection.getInstance().CheckConnectity();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
