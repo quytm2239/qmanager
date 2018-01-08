@@ -44,7 +44,7 @@ namespace QManager
             return instance;
         }
 
-        public void DoQueryCommand(string commandText, )
+        public void DoQueryCommand(string commandText,MySqlCommand cmd)
         {
             cmd.CommandText = SQLCommands.GET_ALL_TEST;
             cmd.CommandType = CommandType.Text;
