@@ -5,9 +5,9 @@ namespace QManager.GUI
 {
     public partial class MainScreen : Form
     {
-        private const int leftMenuMinWidth = 50;
-        private const int leftMenuMaxWidth = 200;
-        private bool isLeftMenuMaxWidth = true;
+        private const int LeftMenuMinWidth = 50;
+        private const int LeftMenuMaxWidth = 200;
+        private bool IsLeftMenuMaxWidth = true;
         public MainScreen()
         {
             InitializeComponent();
@@ -31,12 +31,23 @@ namespace QManager.GUI
 
         }
 
-        private void buttonCloseLeftMenu_Click(object sender, EventArgs e)
+        private void ButtonCloseLeftMenu_Click(object sender, EventArgs e)
         {
-            Size newSize = new Size(isLeftMenuMaxWidth ? leftMenuMinWidth : leftMenuMaxWidth, this.leftMenu.Size.Height);
-            this.buttonCloseLeftMenu.Text = isLeftMenuMaxWidth ? ">>" : "<<";
-            isLeftMenuMaxWidth = !isLeftMenuMaxWidth;
-            this.leftMenu.Size = newSize;
+            this.UpdateLeftMenu();
+        }
+
+        private void UpdateLeftMenu()
+        {
+            Size newSize = new Size(this.IsLeftMenuMaxWidth ? LeftMenuMinWidth : LeftMenuMaxWidth, this.LeftPanel.Size.Height);
+            this.ButtonCloseLeftMenu.Text = this.IsLeftMenuMaxWidth ? ">>" : "<<";
+            this.PictureBoxAvatar.Visible = this.IsLeftMenuMaxWidth ? false : true;
+            this.IsLeftMenuMaxWidth = !this.IsLeftMenuMaxWidth;
+            this.LeftPanel.Size = newSize;
+        }
+
+        private void PictureBoxAvatar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
