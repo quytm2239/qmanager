@@ -5,8 +5,8 @@ namespace QManager.GUI
 {
     public partial class MainScreen : Form
     {
-        private const int LeftMenuMinWidth = 50;
-        private const int LeftMenuMaxWidth = 200;
+        private const int LeftMenuMinWidth = 80;
+        private const int LeftMenuMaxWidth = 180;
         private bool IsLeftMenuMaxWidth = true;
         public MainScreen()
         {
@@ -39,13 +39,18 @@ namespace QManager.GUI
         private void UpdateLeftMenu()
         {
             Size newSize = new Size(this.IsLeftMenuMaxWidth ? LeftMenuMinWidth : LeftMenuMaxWidth, this.LeftPanel.Size.Height);
-            this.ButtonCloseLeftMenu.Text = this.IsLeftMenuMaxWidth ? ">>" : "<<";
-            this.PictureBoxAvatar.Visible = this.IsLeftMenuMaxWidth ? false : true;
+            this.ButtonCloseLeftMenu.Text = this.IsLeftMenuMaxWidth ? "Mở rộng" : "Thu nhỏ";
+            //this.PictureBoxAvatar.Visible = this.IsLeftMenuMaxWidth ? false : true;
             this.IsLeftMenuMaxWidth = !this.IsLeftMenuMaxWidth;
             this.LeftPanel.Size = newSize;
         }
 
         private void PictureBoxAvatar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
