@@ -56,27 +56,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\BaseClass\BaseChildForm.cs">
+    <Compile Include="BaseClass\BaseChildForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\DB\DBConnection.cs" />
-    <Compile Include="src\DB\SQLCommands.Designer.cs">
+    <Compile Include="DAO\DAOAccount.cs" />
+    <Compile Include="DAO\Script\SQLAccount.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SQLCommands.resx</DependentUpon>
+      <DependentUpon>SQLAccount.resx</DependentUpon>
     </Compile>
+    <Compile Include="DB\DBConnection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="src\GUI\MainScreen.cs">
+    <Compile Include="GUI\MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\GUI\MainScreen.Designer.cs">
+    <Compile Include="GUI\MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="src\DB\SQLCommands.resx">
+    <Compile Include="Model\Account.cs" />
+    <EmbeddedResource Include="DAO\Script\SQLAccount.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SQLCommands.Designer.cs</LastGenOutput>
+      <LastGenOutput>SQLAccount.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,7 +91,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\GUI\MainScreen.resx">
+    <EmbeddedResource Include="GUI\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -122,8 +125,6 @@
     <Content Include="docs\MySqlTransaction.xml" />
     <None Include="Resources\friendly-for-facebook.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\DAO\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

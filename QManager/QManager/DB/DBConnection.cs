@@ -3,7 +3,7 @@
 using MySql.Data.MySqlClient;
 using System.Data;
 using QManager.Properties;
-using QManager.DB;
+using System.Collections.Generic;
 
 namespace QManager
 {
@@ -32,7 +32,7 @@ namespace QManager
             {
                 mainConnection.Open();
                 Console.WriteLine("Connected to: " + connectionStringBuilder.Server +":"+ connectionStringBuilder.Port + " SUCCESSFULLY!");
-                mainConnection.Close();
+                //mainConnection.Close();
             }
             catch (MySqlException mysqle)
             {
@@ -44,28 +44,17 @@ namespace QManager
             return instance;
         }
 
-        public void DoQueryCommand(string commandText,MySqlCommand cmd)
+        public MySqlCommand getCommand()
         {
-            cmd.CommandText = SQLCommands.GET_ALL_TEST;
-            cmd.CommandType = CommandType.Text;
+            ConnectionState state = mainConnection.State;
 
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            
+            MySqlCommand command = new MySqlCommand();
+            
+            switch (state)
             {
-                Console.WriteLine(String.Format("{0}, {1}",
-                    reader.GetInt32(0), reader.GetString(1))
-                );
+                case ConnectionState.
             }
-
-            reader.Close();
-        }
-
-        public void InsertCommand(MySqlCommand cmd, string name)
-        {
-            cmd.CommandText = "INSERT INTO test (testcol) VALUES (?name)";
-            cmd.Parameters.AddWithValue("?name", name);
-            cmd.ExecuteNonQuery();
         }
     }
 }

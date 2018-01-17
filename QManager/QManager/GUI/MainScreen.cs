@@ -40,17 +40,12 @@ namespace QManager.GUI
         {
             Size newSize = new Size(this.IsLeftMenuMaxWidth ? LeftMenuMinWidth : LeftMenuMaxWidth, this.LeftPanel.Size.Height);
             this.ButtonCloseLeftMenu.Text = this.IsLeftMenuMaxWidth ? "Mở rộng" : "Thu nhỏ";
-            //this.PictureBoxAvatar.Visible = this.IsLeftMenuMaxWidth ? false : true;
+            this.PictureBoxAvatar.Visible = this.IsLeftMenuMaxWidth ? false : true;
             this.IsLeftMenuMaxWidth = !this.IsLeftMenuMaxWidth;
             this.LeftPanel.Size = newSize;
         }
 
         private void PictureBoxAvatar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }
