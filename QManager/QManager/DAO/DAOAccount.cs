@@ -8,8 +8,8 @@ namespace QManager
     {
         public static List<Account> GetAccountById(Int64 id)
         {
-            DBConnection.getInstance.main
-            return 
+            //DBConnection.getInstance.main
+            return new List<Account>();
         }
     }
 }

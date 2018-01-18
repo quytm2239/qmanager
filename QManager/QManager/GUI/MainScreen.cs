@@ -8,6 +8,7 @@ namespace QManager.GUI
         private const int LeftMenuMinWidth = 80;
         private const int LeftMenuMaxWidth = 180;
         private bool IsLeftMenuMaxWidth = true;
+        public static DisconnectedDialog dialog = new DisconnectedDialog();
         public MainScreen()
         {
             InitializeComponent();
@@ -19,7 +20,11 @@ namespace QManager.GUI
             panel.Controls.Add(myForm);
             myForm.Show();
         */
+            this.FormClosing += MainScreen_FormClosing;
+            DBConnection.GetInstance().Show
         }
+
+        private void MainScreen_FormClosing(object sender, FormClosingEventArgs e) => Program.IsAppClosed = true;
 
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
