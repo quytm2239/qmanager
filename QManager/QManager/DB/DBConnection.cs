@@ -13,6 +13,7 @@ namespace QManager
         private static readonly DBConnection instance = new DBConnection();
         private MySqlConnection mainConnection;
         private MySqlConnection backgroundConnection;
+        private MySqlConnection testConnection;
         private bool IsReady = false;
         public EventHandler NetworkError;
         private DBConnection()
@@ -23,19 +24,23 @@ namespace QManager
             connectionStringBuilder.Password = Settings.Default.DBPass;
             connectionStringBuilder.MinimumPoolSize = Settings.Default.DBMinPoolSize;
             connectionStringBuilder.MaximumPoolSize = Settings.Default.DBMaxPoolSize;
+            connectionStringBuilder.ConnectionTimeout = Settings.Default.DBConnectionTimeout;
 
             mainConnection = new MySqlConnection(connectionStringBuilder.ConnectionString);
             backgroundConnection = new MySqlConnection(connectionStringBuilder.ConnectionString);
+            testConnection = new MySqlConnection(connectionStringBuilder.ConnectionString);
 
             mainConnection.StateChange += MainConnection_StateChange;
             backgroundConnection.StateChange += BackgroundConnection_StateChange;
+            testConnection.StateChange += TestConnection_StateChange;
         }
 
         public static DBConnection GetInstance() => instance;
 
         public void CheckConnectity()
         {
-            DoConnection();
+            Console.WriteLine("CheckConnectity()");
+            StartAwaitConnection();
             if (mainConnection.State == ConnectionState.Open)
             {
                 Console.WriteLine("Connected to: " + connectionStringBuilder.Server +":"+ connectionStringBuilder.Port + " SUCCESSFULLY!");
@@ -45,28 +50,20 @@ namespace QManager
 
         private void MainConnection_StateChange(object sender, StateChangeEventArgs e)
         {
+            Console.WriteLine("MainConnection_StateChange()");
             Console.WriteLine(value: "MAIN_CONNECTION: " + e.CurrentState);
-            switch (e.CurrentState)
-            {
-                case ConnectionState.Broken:
-                case ConnectionState.Closed:
-                    if (IsReady && !Program.IsAppClosed)
-                    {
-                        DoConnection();
-                    }
-                    break;
-                case ConnectionState.Open:
-                    IsReady = true;
-                    break;
-                default:
-                    break;
-            }
+            IsReady = true;
         }
-
         private void BackgroundConnection_StateChange(object sender, StateChangeEventArgs e) => Console.WriteLine(value: "BACKGROUND STATE: " + e.CurrentState);
+        private void TestConnection_StateChange(object sender, StateChangeEventArgs e) => Console.WriteLine(value: "TEST STATE: " + e.CurrentState);
 
-        private async void DoConnection()
+        private async void StartAwaitConnection()
         {
+            Console.WriteLine("StartConnection()");
+            if (
+                mainConnection.State == ConnectionState.Connecting || backgroundConnection.State == ConnectionState.Connecting ||
+                mainConnection.State == ConnectionState.Open || backgroundConnection.State == ConnectionState.Open)
+                return;
             try
             {
                 await mainConnection.OpenAsync();
@@ -75,6 +72,38 @@ namespace QManager
             catch (MySqlException mysqle)
             {
                 Console.WriteLine(mysqle.Message);
+            }
+        }
+
+        private async void StopAwaitConnection()
+        {
+            Console.WriteLine("StopConnection()");
+            if (mainConnection.State == ConnectionState.Closed
+                || backgroundConnection.State == ConnectionState.Closed) return;
+            await mainConnection.CloseAsync();
+            await backgroundConnection.CloseAsync();
+        }
+
+        private async void StartTestConnection()
+        {
+            Console.WriteLine("StartTestConnection()");
+            if (testConnection.State == ConnectionState.Connecting) return;
+            try
+            {
+                await testConnection.OpenAsync();
+                if (testConnection.State == ConnectionState.Open)
+                {
+                    if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
+                    StartAwaitConnection();
+                    testConnection.Close();
+                }
+            }
+            catch (MySqlException mysqle)
+            {
+                Console.WriteLine(mysqle.Message);
+                if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
+                StopAwaitConnection();
+                if (IsReady && !Program.IsAppClosed) StartAwaitConnection();
             }
         }
 
@@ -92,15 +121,16 @@ namespace QManager
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 1000;
+            aTimer.Interval = 2000;
             aTimer.Enabled = true;
         }
 
         // Specify what you want to happen when the Elapsed event is raised.
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
-            Console.WriteLine(mainConnection.State);
-            NetworkError?.Invoke(this, EventArgs.Empty);
+            Console.WriteLine("OnTimedEvent()");
+            if (testConnection.State == ConnectionState.Open) return;
+            StartTestConnection();
         }
     }
 }

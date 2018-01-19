@@ -79,10 +79,19 @@ namespace QManager.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public uint DBMaxPoolSize {
             get {
                 return ((uint)(this["DBMaxPoolSize"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public uint DBConnectionTimeout {
+            get {
+                return ((uint)(this["DBConnectionTimeout"]));
             }
         }
     }

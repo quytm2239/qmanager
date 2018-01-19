@@ -1,6 +1,9 @@
 ﻿using System.Windows.Forms;
 using System;
 using System.Drawing;
+using System.Data;
+using MySql.Data.MySqlClient;
+
 namespace QManager.GUI
 {
     public partial class MainScreen : Form
@@ -21,7 +24,7 @@ namespace QManager.GUI
             myForm.Show();
         */
             this.FormClosing += MainScreen_FormClosing;
-            DBConnection.GetInstance().Show
+            DBConnection.GetInstance().NetworkError += NetworkError_Handler;
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e) => Program.IsAppClosed = true;
@@ -53,6 +56,20 @@ namespace QManager.GUI
         private void PictureBoxAvatar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void NetworkError_Handler(object sender, EventArgs e)
+        {
+            ConnectionState state = ((MySqlConnection)sender).State;
+            if (state == ConnectionState.Closed)
+            {
+                if (dialog.Visible == false)
+                    dialog.ShowDialog();
+            } else
+            {
+                if (dialog.Visible == true)
+                    dialog.Close();
+            }
         }
     }
 }
