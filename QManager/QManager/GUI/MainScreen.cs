@@ -68,7 +68,12 @@ namespace QManager.GUI
             } else
             {
                 if (dialog.Visible == true)
-                    dialog.Close();
+                {
+                    dialog.Invoke((MethodInvoker)delegate
+                    {
+                        dialog.Close();
+                    });
+                }
             }
         }
     }

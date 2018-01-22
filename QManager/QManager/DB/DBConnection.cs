@@ -24,7 +24,7 @@ namespace QManager
             connectionStringBuilder.Password = Settings.Default.DBPass;
             connectionStringBuilder.MinimumPoolSize = Settings.Default.DBMinPoolSize;
             connectionStringBuilder.MaximumPoolSize = Settings.Default.DBMaxPoolSize;
-            connectionStringBuilder.ConnectionTimeout = Settings.Default.DBConnectionTimeout;
+            connectionStringBuilder.ConnectionTimeout = 1;
 
             mainConnection = new MySqlConnection(connectionStringBuilder.ConnectionString);
             backgroundConnection = new MySqlConnection(connectionStringBuilder.ConnectionString);
@@ -94,8 +94,8 @@ namespace QManager
                 if (testConnection.State == ConnectionState.Open)
                 {
                     if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
-                    StartAwaitConnection();
                     testConnection.Close();
+                    StartAwaitConnection();
                 }
             }
             catch (MySqlException mysqle)
@@ -121,7 +121,7 @@ namespace QManager
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 2000;
+            aTimer.Interval = 1000;
             aTimer.Enabled = true;
         }
 
