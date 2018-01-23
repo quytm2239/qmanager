@@ -14,7 +14,7 @@ namespace QManager
         private MySqlConnection mainConnection;
         private MySqlConnection backgroundConnection;
         private MySqlConnection testConnection;
-        private bool IsReady = false;
+        private bool IsDisconnected = false;
         public EventHandler NetworkError;
         private DBConnection()
         {
@@ -52,7 +52,6 @@ namespace QManager
         {
             Console.WriteLine("MainConnection_StateChange()");
             Console.WriteLine(value: "MAIN_CONNECTION: " + e.CurrentState);
-            IsReady = true;
         }
         private void BackgroundConnection_StateChange(object sender, StateChangeEventArgs e) => Console.WriteLine(value: "BACKGROUND STATE: " + e.CurrentState);
         private void TestConnection_StateChange(object sender, StateChangeEventArgs e) => Console.WriteLine(value: "TEST STATE: " + e.CurrentState);
@@ -84,29 +83,6 @@ namespace QManager
             await backgroundConnection.CloseAsync();
         }
 
-        private async void StartTestConnection()
-        {
-            Console.WriteLine("StartTestConnection()");
-            if (testConnection.State == ConnectionState.Connecting) return;
-            try
-            {
-                await testConnection.OpenAsync();
-                if (testConnection.State == ConnectionState.Open)
-                {
-                    if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
-                    testConnection.Close();
-                    StartAwaitConnection();
-                }
-            }
-            catch (MySqlException mysqle)
-            {
-                Console.WriteLine(mysqle.Message);
-                if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
-                StopAwaitConnection();
-                if (IsReady && !Program.IsAppClosed) StartAwaitConnection();
-            }
-        }
-
         public MySqlCommand GetCommand()
         {
             while(mainConnection.State == ConnectionState.Connecting) {}
@@ -129,8 +105,54 @@ namespace QManager
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             Console.WriteLine("OnTimedEvent()");
-            if (testConnection.State == ConnectionState.Open) return;
-            StartTestConnection();
+            //if (testConnection.State == ConnectionState.Open) return;
+            //StartTestConnection();
+            ScheduleCheckDBConnectivityAsync();
+        }
+
+        private async void ScheduleCheckDBConnectivityAsync()
+        {
+            switch (testConnection.State)
+            {
+                case ConnectionState.Closed:
+                case ConnectionState.Broken:
+                    try { testConnection.Open(); }
+                    catch (MySqlException e)
+                    {
+                        Console.WriteLine(value: e.Message);
+                        if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
+                        testConnection.Close();
+                        mainConnection.Close();
+                        IsDisconnected = true;
+                    }
+                    break;
+                case ConnectionState.Connecting:
+                    if (IsDisconnected && !Program.IsAppClosed)
+                    {
+                        testConnection.Close();
+                        try { testConnection.Open(); }
+                        catch (MySqlException e)
+                        {
+                            Console.WriteLine(value: e.Message);
+                            IsDisconnected = true;
+                            testConnection.Close();
+                            mainConnection.Close();
+                        }
+                    }
+                    break;
+                case ConnectionState.Open:
+                    if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
+                    testConnection.Close();
+                    if (IsDisconnected && !Program.IsAppClosed)
+                    {
+                        await mainConnection.OpenAsync();
+                        IsDisconnected = false;
+                    }
+                    break;
+                case ConnectionState.Executing:
+                case ConnectionState.Fetching:
+                    break;
+            }
         }
     }
 }
