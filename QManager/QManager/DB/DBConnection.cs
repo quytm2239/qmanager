@@ -66,11 +66,12 @@ namespace QManager
             try
             {
                 await mainConnection.OpenAsync();
-                await backgroundConnection.OpenAsync();
+                //await backgroundConnection.OpenAsync();
             }
             catch (MySqlException mysqle)
             {
                 Console.WriteLine(mysqle.Message);
+                IsDisconnected = true;
             }
         }
 
@@ -97,7 +98,7 @@ namespace QManager
         {
             Timer aTimer = new Timer();
             aTimer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
-            aTimer.Interval = 1000;
+            aTimer.Interval = 1500;
             aTimer.Enabled = true;
         }
 
@@ -105,8 +106,6 @@ namespace QManager
         private void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             Console.WriteLine("OnTimedEvent()");
-            //if (testConnection.State == ConnectionState.Open) return;
-            //StartTestConnection();
             ScheduleCheckDBConnectivityAsync();
         }
 
@@ -116,13 +115,23 @@ namespace QManager
             {
                 case ConnectionState.Closed:
                 case ConnectionState.Broken:
-                    try { testConnection.Open(); }
-                    catch (MySqlException e)
+                    try { await testConnection.OpenAsync(); }
+                    catch (Exception e)
                     {
                         Console.WriteLine(value: e.Message);
                         if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
-                        testConnection.Close();
-                        mainConnection.Close();
+
+                        //This will avoid Application terminated 
+                        //when Start app with NO Network Connection or DB Connection
+                        try {
+                            testConnection.Close();
+                            mainConnection.Close();
+                        } catch (NotSupportedException nse)
+                        { Console.WriteLine(value: nse.Message); }
+                        catch (NullReferenceException nre)
+                        { Console.WriteLine(value: nre.Message); }
+                        //--------------------------------------------------------//
+
                         IsDisconnected = true;
                     }
                     break;
@@ -131,23 +140,31 @@ namespace QManager
                     {
                         testConnection.Close();
                         try { testConnection.Open(); }
-                        catch (MySqlException e)
+                        catch (Exception e)
                         {
                             Console.WriteLine(value: e.Message);
-                            IsDisconnected = true;
                             testConnection.Close();
                             mainConnection.Close();
+                            IsDisconnected = true;
                         }
                     }
                     break;
                 case ConnectionState.Open:
                     if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
-                    testConnection.Close();
                     if (IsDisconnected && !Program.IsAppClosed)
                     {
                         await mainConnection.OpenAsync();
                         IsDisconnected = false;
                     }
+
+                    //This will avoid Application terminated 
+                    //when Start app with NO Network Connection or DB Connection
+                    try { testConnection.Close(); }
+                    catch (NotSupportedException nse)
+                    { Console.WriteLine(value: nse.Message); }
+                    catch (NullReferenceException nre)
+                    { Console.WriteLine(value: nre.Message); }
+                    //--------------------------------------------------------//
                     break;
                 case ConnectionState.Executing:
                 case ConnectionState.Fetching:
