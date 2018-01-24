@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QManager.Model
 {
-    class Account
+    public class Account
     {
         private Int64 id;
         private String username;
@@ -22,7 +22,7 @@ namespace QManager.Model
 
         }
 
-        public Account(long id, string username, string password, string email, int status, int role, DateTime createAt, DateTime updatedAt)
+        public Account(Int64 id, string username, string password, string email, int status, int role, DateTime createAt, DateTime updatedAt)
         {
             this.id = id;
             this.username = username;
@@ -32,6 +32,18 @@ namespace QManager.Model
             this.role = role;
             this.createAt = createAt;
             this.updatedAt = updatedAt;
+        }
+
+        public Account(Int64 id, string username, string password, string email, int status, int role)
+        {
+            this.id = id;
+            this.username = username;
+            this.password = password;
+            this.email = email;
+            this.status = status;
+            this.role = role;
+            this.createAt = new DateTime();
+            this.updatedAt = new DateTime();
         }
     }
 }

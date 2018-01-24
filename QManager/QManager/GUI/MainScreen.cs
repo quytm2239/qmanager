@@ -3,6 +3,8 @@ using System;
 using System.Drawing;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Collections.Generic;
+using QManager.Model;
 
 namespace QManager.GUI
 {
@@ -25,6 +27,9 @@ namespace QManager.GUI
         */
             this.FormClosing += MainScreen_FormClosing;
             DBConnection.GetInstance().NetworkError += NetworkError_Handler;
+            //int rowaffect = DAOAccount.AddAccount("quytm2239","123456","quytm2239@gmail.com",0,0);
+            List<Account> list = DAOAccount.GetAll();
+            Console.WriteLine(list);
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e) => Program.IsAppClosed = true;
