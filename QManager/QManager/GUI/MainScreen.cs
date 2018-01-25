@@ -29,7 +29,7 @@ namespace QManager.GUI
             this.FormClosing += MainScreen_FormClosing;
             DBConnection.GetInstance().NetworkError += NetworkError_Handler;
 
-            //IList<Account> account = DAOAccount.GetAccountByIdOrUsername(1,"quytm2239");
+            IList<Account> account = DAOAccount.GetAccountByIdOrUsername(1,"quytm2239");
             DAOAccount.AddAccount("quytm238", "123456", "quytm238@gmail.com", 0, 0);
         }
 

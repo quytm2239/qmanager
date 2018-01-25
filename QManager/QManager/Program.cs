@@ -15,7 +15,7 @@ namespace QManager
         [STAThread]
         static void Main()
         {
-            DBConnection.GetInstance().CheckConnectity();
+            //DBConnection.GetInstance().CheckConnectity();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainScreen());

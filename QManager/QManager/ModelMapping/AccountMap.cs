@@ -19,8 +19,8 @@ namespace QManager.ModelMapping
             Map(x => x.email);
             Map(x => x.status);
             Map(x => x.role);
-            Map(x => x.createdAt);
-            Map(x => x.updatedAt);
+            Map(x => x.createdAt).Column("createdAt").ReadOnly();
+            Map(x => x.updatedAt).Column("updatedAt").ReadOnly();
         }
     }
 }
