@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace QManager.Model
 {
+    //https://www.devart.com/dotconnect/mysql/docs/Devart.Data.MySql~Devart.Data.MySql.MySqlType.html#
     public class Account
     {
-        private Int64 id;
-        private String username;
-        private String password;
-        private String email;
-        private int status;
-        private int role;
-        private DateTime createAt;
-        private DateTime updatedAt;
+        public virtual Int64 id { get; protected set; }
+        public virtual String username { get; set; }
+        public virtual String password { get; set; }
+        public virtual String email { get; set; }
+        public virtual int status { get; set; }
+        public virtual int role { get; set; }
+        public virtual DateTime createdAt { get; protected set; }
+        public virtual DateTime updatedAt { get; protected set; }
 
         public Account()
         {
-
         }
 
-        public Account(Int64 id, string username, string password, string email, int status, int role, DateTime createAt, DateTime updatedAt)
+        public Account(long id, string username, string password, string email, int status, int role, DateTime createdAt, DateTime updatedAt)
         {
             this.id = id;
             this.username = username;
@@ -30,20 +30,17 @@ namespace QManager.Model
             this.email = email;
             this.status = status;
             this.role = role;
-            this.createAt = createAt;
+            this.createdAt = createdAt;
             this.updatedAt = updatedAt;
         }
 
-        public Account(Int64 id, string username, string password, string email, int status, int role)
+        public Account(string username, string password, string email, int status, int role)
         {
-            this.id = id;
             this.username = username;
             this.password = password;
             this.email = email;
             this.status = status;
             this.role = role;
-            this.createAt = new DateTime();
-            this.updatedAt = new DateTime();
         }
     }
 }

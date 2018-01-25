@@ -14,6 +14,7 @@ namespace QManager.GUI
         private const int LeftMenuMaxWidth = 180;
         private bool IsLeftMenuMaxWidth = true;
         public static DisconnectedDialog dialog = new DisconnectedDialog();
+
         public MainScreen()
         {
             InitializeComponent();
@@ -27,9 +28,9 @@ namespace QManager.GUI
         */
             this.FormClosing += MainScreen_FormClosing;
             DBConnection.GetInstance().NetworkError += NetworkError_Handler;
-            //int rowaffect = DAOAccount.AddAccount("quytm2239","123456","quytm2239@gmail.com",0,0);
-            List<Account> list = DAOAccount.GetAll();
-            Console.WriteLine(list);
+
+            //IList<Account> account = DAOAccount.GetAccountByIdOrUsername(1,"quytm2239");
+            DAOAccount.AddAccount("quytm238", "123456", "quytm238@gmail.com", 0, 0);
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e) => Program.IsAppClosed = true;

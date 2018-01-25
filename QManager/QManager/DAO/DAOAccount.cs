@@ -4,64 +4,55 @@ using QManager.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using NHibernate;
+using QManager.DAO;
 
 namespace QManager
 {
-    public static class DAOAccount
+    public class DAOAccount : BaseDAO
     {
-        public static List<Account> GetAccountById(Int64 id)
+        public static IList<Account> GetAccountByIdOrUsername(Int64 id, String username)
         {
-            List<Account> list = new List<Account>();
-            MySqlCommand command = DBConnection.GetInstance().GetCommand();
-            command.CommandText = SQLAccount.GET_BY_ID;
-            command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue(SQLAccount.KEY_ID, id);
-            MySqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
+            IList<Account> customersList;
+            using (var session = GetSession())
             {
-                while(reader.Read())
-                {
+                customersList = session
+                    .QueryOver<Account>()
+                    .Where(a => a.id == id || a.username == username)
+                    .List<Account>();
+            }
+            return customersList;
+        }
 
+        public static IList<Account> GetAll()
+        {
+            IList<Account> customersList;
+            using (var session = GetSession())
+            {
+                customersList = session.QueryOver<Account>().List<Account>();
+            }
+            return customersList;
+        }
+
+        public static long AddAccount(string username, string password, string email, int status, int role)
+        {
+            Account account = new Account(username,password,email,status,role);
+            using (var session = GetSession())
+            {
+                using (ITransaction transaction = session.BeginTransaction())
+                {
+                    try
+                    {
+                        session.Save(account);
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                    }
                 }
             }
-            return list;
-        }
-
-        public static List<Account> GetAll()
-        {
-            List<Account> list = new List<Account>();
-            MySqlCommand command = DBConnection.GetInstance().GetCommand();
-            command.CommandText = SQLAccount.GET_ALL;
-            command.CommandType = CommandType.Text;
-            MySqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                Int64 id = reader.GetInt64(0);
-                String id = reader.GetInt64(1);
-                Int64 id = reader.GetInt64(2);
-                Int64 id = reader.GetInt64(3);
-                Int64 id = reader.GetInt64(4);
-                Int64 id = reader.GetInt64(5);
-                Int64 id = reader.GetInt64(4);
-                Account account = new Account(
-                    )
-                
-            }
-            return list;
-        }
-
-        public static int AddAccount(string username, string password, string email, int status, int role)
-        {
-            MySqlCommand command = DBConnection.GetInstance().GetCommand();
-            command.CommandText = SQLAccount.INSERT;
-            command.CommandType = CommandType.Text;
-            command.Parameters.AddWithValue(SQLAccount.KEY_USERNAME, username);
-            command.Parameters.AddWithValue(SQLAccount.KEY_PASSWORD, password);
-            command.Parameters.AddWithValue(SQLAccount.KEY_EMAIL, email);
-            command.Parameters.AddWithValue(SQLAccount.KEY_STATUS, status);
-            command.Parameters.AddWithValue(SQLAccount.KEY_ROLE, role);
-            int row = command.ExecuteNonQuery();
-            return row;
+            return account.id;
         }
     }
 }
