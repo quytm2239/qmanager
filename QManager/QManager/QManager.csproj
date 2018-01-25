@@ -35,6 +35,9 @@
     <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.2.0.3.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -78,6 +81,7 @@
     <Compile Include="BaseClass\BaseChildForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="DAO\DAOAccount.cs" />
     <Compile Include="DAO\Script\SQLAccount.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -85,12 +89,15 @@
       <DependentUpon>SQLAccount.resx</DependentUpon>
     </Compile>
     <Compile Include="DB\DBConnection.cs" />
+    <Compile Include="DB\FluentNHibernateConnection.cs" />
+    <Compile Include="DB\SqlStatementInterceptor.cs" />
     <Compile Include="GUI\DisconnectedDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\DisconnectedDialog.Designer.cs">
       <DependentUpon>DisconnectedDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModelMapping\AccountMap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -155,5 +162,6 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
