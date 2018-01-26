@@ -101,6 +101,10 @@
     </Compile>
     <Compile Include="DAO\BaseDAO.cs" />
     <Compile Include="DAO\DAOAccount.cs" />
+    <Compile Include="DAO\DAODepartment.cs" />
+    <Compile Include="DAO\DAOFunction.cs" />
+    <Compile Include="DAO\DAOPermission.cs" />
+    <Compile Include="DAO\DAOProfile.cs" />
     <Compile Include="DAO\Script\SQLAccount.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,7 +131,7 @@
     <Compile Include="ModelMapping\ProfileMap.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\Department.cs" />
-    <Compile Include="Model\Funtion.cs" />
+    <Compile Include="Model\Function.cs" />
     <Compile Include="Model\Permission.cs" />
     <Compile Include="Model\Profile.cs" />
     <Compile Include="Program.cs" />
