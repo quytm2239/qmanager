@@ -4,17 +4,16 @@ using QManager.Model;
 
 namespace QManager.ModelMapping
 {
-    class AccountMap : ClassMap<Account>
+    class PermissionMap : ClassMap<Permission>
     {
-        public AccountMap()
+        public PermissionMap()
         {
-            Table(TABLE_NAME.ACCOUNT);
+            Table(TABLE_NAME.PERMISSION);
             Id(x => x.id);
-            Map(x => x.username);
-            Map(x => x.password);
-            Map(x => x.email);
-            Map(x => x.status);
+            Map(x => x.function_id);
             Map(x => x.role);
+            Map(x => x.deparment_id);
+            Map(x => x.permission);
             Map(x => x.createdAt).Column("createdAt").ReadOnly();
             Map(x => x.updatedAt).Column("updatedAt").ReadOnly();
         }

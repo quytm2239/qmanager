@@ -4,17 +4,14 @@ using QManager.Model;
 
 namespace QManager.ModelMapping
 {
-    class AccountMap : ClassMap<Account>
+    class FuntionMap : ClassMap<Funtion>
     {
-        public AccountMap()
+        public FuntionMap()
         {
-            Table(TABLE_NAME.ACCOUNT);
+            Table(TABLE_NAME.DEPARTMENT);
             Id(x => x.id);
-            Map(x => x.username);
-            Map(x => x.password);
-            Map(x => x.email);
-            Map(x => x.status);
-            Map(x => x.role);
+            Map(x => x.name);
+            Map(x => x.description);
             Map(x => x.createdAt).Column("createdAt").ReadOnly();
             Map(x => x.updatedAt).Column("updatedAt").ReadOnly();
         }

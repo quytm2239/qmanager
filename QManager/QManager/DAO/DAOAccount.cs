@@ -18,7 +18,9 @@ namespace QManager
             {
                 customersList = session
                     .QueryOver<Account>()
-                    .Where(a => a.id == id || a.username == username)
+                    .Where(a =>
+                        a.id == id || a.username == username
+                    )
                     .List<Account>();
             }
             return customersList;
