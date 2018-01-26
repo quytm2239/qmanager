@@ -12,5 +12,9 @@ namespace QManager.Model
         public virtual int role { get; set; }
         public virtual Int64 deparment_id { get; set; }
         public virtual int permission { get; set; }
+
+        public Permission()
+        {
+        }
     }
 }

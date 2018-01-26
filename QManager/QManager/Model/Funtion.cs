@@ -10,5 +10,9 @@ namespace QManager.Model
     {
         public virtual String name { get; set; }
         public virtual String description { get; set; }
+
+        public Funtion()
+        {
+        }
     }
 }

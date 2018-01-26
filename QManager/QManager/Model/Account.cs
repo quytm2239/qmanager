@@ -15,6 +15,11 @@ namespace QManager.Model
         public virtual int status { get; set; }
         public virtual int role { get; set; }
 
+        public Account()
+        {
+           
+        }
+
         public Account(long id, string username, string password, string email, int status, int role, DateTime createdAt, DateTime updatedAt)
         {
             this.id = id;

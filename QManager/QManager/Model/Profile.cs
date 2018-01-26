@@ -18,5 +18,9 @@ namespace QManager.Model
 
         public virtual String job_title { get; set; }
         public virtual String join_date { get; set; }
+
+        public Profile()
+        {
+        }
     }
 }
