@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace QManager.Model
 {
-    class Funtion : BaseModel
+    public class Function : BaseModel
     {
         public virtual String name { get; set; }
         public virtual String description { get; set; }
 
-        public Funtion()
+        public Function()
         {
+        }
+
+        public Function(string name, string description)
+        {
+            this.name = name;
+            this.description = description;
         }
     }
 }
