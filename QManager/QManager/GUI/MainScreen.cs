@@ -5,6 +5,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using QManager.Model;
+using QManager.DAO;
 
 namespace QManager.GUI
 {
@@ -29,8 +30,10 @@ namespace QManager.GUI
             this.FormClosing += MainScreen_FormClosing;
             DBConnection.GetInstance().NetworkError += NetworkError_Handler;
 
-            IList<Account> account = DAOAccount.GetAccountByIdOrUsername(1,"quytm2239");
-            DAOAccount.AddAccount("quytm238", "123456", "quytm238@gmail.com", 0, 0);
+            IList<Account> accountList = DAOAccount.GetAll();
+
+            Account account = new Account("quytm238", "123456", "quytm238@gmail.com", 0, 0);
+            BaseDAO.Add(account);
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e) => Program.IsAppClosed = true;

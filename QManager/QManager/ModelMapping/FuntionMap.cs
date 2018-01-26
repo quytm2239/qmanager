@@ -4,7 +4,7 @@ using QManager.Model;
 
 namespace QManager.ModelMapping
 {
-    class FuntionMap : ClassMap<Funtion>
+    class FuntionMap : ClassMap<Function>
     {
         public FuntionMap()
         {

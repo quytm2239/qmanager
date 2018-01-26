@@ -20,18 +20,6 @@ namespace QManager.Model
            
         }
 
-        public Account(long id, string username, string password, string email, int status, int role, DateTime createdAt, DateTime updatedAt)
-        {
-            this.id = id;
-            this.username = username;
-            this.password = password;
-            this.email = email;
-            this.status = status;
-            this.role = role;
-            this.createdAt = createdAt;
-            this.updatedAt = updatedAt;
-        }
-
         public Account(string username, string password, string email, int status, int role)
         {
             this.username = username;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QManager.Model
 {
-    class Permission : BaseModel
+    public class Permission : BaseModel
     {
         public virtual Int64 function_id { get; set; }
         public virtual int role { get; set; }
@@ -15,6 +15,14 @@ namespace QManager.Model
 
         public Permission()
         {
+        }
+
+        public Permission(long function_id, int role, long deparment_id, int permission)
+        {
+            this.function_id = function_id;
+            this.role = role;
+            this.deparment_id = deparment_id;
+            this.permission = permission;
         }
     }
 }
