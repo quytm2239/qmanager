@@ -4,3 +4,4 @@
 /QManager.csproj.CoreCompileInputs.cache
 /QManager.csproj.FileListAbsolute.txt
 *.csproj.FileListAbsolute.txt
+*.csproj.GenerateResource.Cache
