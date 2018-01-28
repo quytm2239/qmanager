@@ -38,8 +38,8 @@
             this.LabelProfileInfo = new System.Windows.Forms.Label();
             this.ButtonSale = new System.Windows.Forms.Button();
             this.RightPanel = new System.Windows.Forms.Panel();
-            this.TablePanelStatusBar = new System.Windows.Forms.TableLayoutPanel();
             this.TablePanelRight = new System.Windows.Forms.TableLayoutPanel();
+            this.TablePanelStatusBar = new System.Windows.Forms.TableLayoutPanel();
             this.LeftPanel.SuspendLayout();
             this.TablePanelLeftMenuContainter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAvatar)).BeginInit();
@@ -122,18 +122,18 @@
             resources.ApplyResources(this.RightPanel, "RightPanel");
             this.RightPanel.Name = "RightPanel";
             // 
-            // TablePanelStatusBar
-            // 
-            this.TablePanelStatusBar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            resources.ApplyResources(this.TablePanelStatusBar, "TablePanelStatusBar");
-            this.TablePanelStatusBar.Name = "TablePanelStatusBar";
-            // 
             // TablePanelRight
             // 
             this.TablePanelRight.BackColor = System.Drawing.SystemColors.Info;
             resources.ApplyResources(this.TablePanelRight, "TablePanelRight");
             this.TablePanelRight.Controls.Add(this.TablePanelStatusBar, 0, 1);
             this.TablePanelRight.Name = "TablePanelRight";
+            // 
+            // TablePanelStatusBar
+            // 
+            this.TablePanelStatusBar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            resources.ApplyResources(this.TablePanelStatusBar, "TablePanelStatusBar");
+            this.TablePanelStatusBar.Name = "TablePanelStatusBar";
             // 
             // MainScreen
             // 

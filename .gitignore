@@ -4,3 +4,5 @@
 /QManager/packages/
 /QManager/QManager/obj/Debug/
 /QManager/QManager/docs/
+QManager/QManager/obj/Debug/QManager.GUI.MainScreen.resources
+QManager/QManager/obj/Debug/QManager.Properties.Resources.resources

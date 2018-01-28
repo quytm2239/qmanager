@@ -6,7 +6,7 @@ using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using QManager.Model;
 using QManager.DAO;
-
+using QManager.GUI.Login;
 namespace QManager.GUI
 {
     public partial class MainScreen : Form
@@ -41,6 +41,11 @@ namespace QManager.GUI
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
             Console.WriteLine("MainScreen Loaded!");
+            FLogin fLogin = new FLogin();
+            fLogin.TopLevel = false;
+            fLogin.Anchor = AnchorStyles.None;
+            TablePanelRight.Controls.Add(fLogin,0,0);
+            fLogin.Show();
         }
 
         private void LeftMenu_Paint(object sender, PaintEventArgs e)
