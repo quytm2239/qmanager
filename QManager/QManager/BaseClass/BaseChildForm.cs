@@ -1,14 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QManager.BaseClass
 {
-    class BaseChildForm : Form
+    public class BaseChildForm : Form
     {
+        public BaseChildForm()
+        {
+            Load += new EventHandler(BaseChildForm_Load);
+        }
 
+        private void BaseChildForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

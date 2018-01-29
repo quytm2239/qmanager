@@ -41,9 +41,11 @@ namespace QManager.GUI
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
             Console.WriteLine("MainScreen Loaded!");
-            FLogin fLogin = new FLogin();
-            fLogin.TopLevel = false;
-            fLogin.Anchor = AnchorStyles.None;
+            FLogin fLogin = new FLogin
+            {
+                TopLevel = false,
+                Anchor = AnchorStyles.None
+            };
             TablePanelRight.Controls.Add(fLogin,0,0);
             fLogin.Show();
         }

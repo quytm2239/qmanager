@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QManager.BaseClass;
 
 namespace QManager.GUI.Login
 {
-    public partial class FLogin : Form
+    public partial class FLogin : BaseChildForm
     {
-        public FLogin()
+        public FLogin() : base()
         {
             InitializeComponent();
         }
@@ -24,6 +25,7 @@ namespace QManager.GUI.Login
 
         private void FLogin_Load(object sender, EventArgs e)
         {
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
