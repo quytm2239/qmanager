@@ -6,3 +6,4 @@
 *.csproj.FileListAbsolute.txt
 *.csproj.GenerateResource.Cache
 /DesignTimeResolveAssemblyReferences.cache
+*.Properties.Resources.resources
