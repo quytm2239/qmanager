@@ -117,57 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;TablePanelLeftMenuContainter.Name" xml:space="preserve">
-    <value>TablePanelLeftMenuContainter</value>
-  </data>
-  <data name="&gt;&gt;TablePanelLeftMenuContainter.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TablePanelLeftMenuContainter.Parent" xml:space="preserve">
-    <value>LeftPanel</value>
-  </data>
-  <data name="&gt;&gt;TablePanelLeftMenuContainter.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TablePanelLeftMenuContainter.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ButtonOther" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ButtonHR" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ButtonCloseLeftMenu" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PictureBoxAvatar" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LabelProfileInfo" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ButtonSale" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,120,Absolute,80,Absolute,30,Absolute,30,Absolute,30,Percent,100,Absolute,30" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="LeftPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LeftPanel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 12pt</value>
-  </data>
-  <data name="LeftPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="LeftPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="LeftPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 506</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LeftPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LeftPanel.Name" xml:space="preserve">
-    <value>LeftPanel</value>
-  </data>
-  <data name="&gt;&gt;LeftPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LeftPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LeftPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="TablePanelLeftMenuContainter.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
     <value>Single</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="TablePanelLeftMenuContainter.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -177,6 +131,7 @@
   <data name="ButtonOther.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ButtonOther.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 11.25pt</value>
   </data>
@@ -431,6 +386,36 @@ Số định danh: ĐT001</value>
   </data>
   <data name="TablePanelLeftMenuContainter.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="ButtonOther" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ButtonHR" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ButtonCloseLeftMenu" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="PictureBoxAvatar" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="LabelProfileInfo" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="ButtonSale" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Absolute,120,Absolute,80,Absolute,30,Absolute,30,Absolute,30,Percent,100,Absolute,30" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="LeftPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="LeftPanel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 12pt</value>
+  </data>
+  <data name="LeftPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="LeftPanel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="LeftPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 506</value>
+  </data>
+  <data name="LeftPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LeftPanel.Name" xml:space="preserve">
+    <value>LeftPanel</value>
+  </data>
+  <data name="&gt;&gt;LeftPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LeftPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LeftPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="TablePanelRight.CellBorderStyle" type="System.Windows.Forms.TableLayoutPanelCellBorderStyle, System.Windows.Forms">
     <value>Single</value>

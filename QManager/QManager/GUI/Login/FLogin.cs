@@ -18,7 +18,7 @@ namespace QManager.GUI.Login
             InitializeComponent();
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -28,7 +28,12 @@ namespace QManager.GUI.Login
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonLogin_Click(object sender, EventArgs e)
         {
 
         }

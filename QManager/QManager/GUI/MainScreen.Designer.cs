@@ -124,7 +124,7 @@
             // 
             // TablePanelRight
             // 
-            this.TablePanelRight.BackColor = System.Drawing.SystemColors.Info;
+            this.TablePanelRight.BackColor = System.Drawing.SystemColors.Menu;
             resources.ApplyResources(this.TablePanelRight, "TablePanelRight");
             this.TablePanelRight.Controls.Add(this.TablePanelStatusBar, 0, 1);
             this.TablePanelRight.Name = "TablePanelRight";

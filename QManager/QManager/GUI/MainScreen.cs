@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using QManager.Model;
 using QManager.DAO;
 using QManager.GUI.Login;
+using QManager.GUI.Register;
 namespace QManager.GUI
 {
     public partial class MainScreen : Form
@@ -41,7 +42,7 @@ namespace QManager.GUI
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
             Console.WriteLine("MainScreen Loaded!");
-            FLogin fLogin = new FLogin
+            FRegister fLogin = new FRegister
             {
                 TopLevel = false,
                 Anchor = AnchorStyles.None
