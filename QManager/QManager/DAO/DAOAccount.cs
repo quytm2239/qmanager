@@ -10,8 +10,7 @@ namespace QManager.DAO
         public static IList<Account> GetAll()
         {
             IList<Account> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session.QueryOver<Account>().List<Account>();
             }
             return objList;
@@ -20,8 +19,7 @@ namespace QManager.DAO
         public static IList<Account> GetById(Int64 id)
         {
             IList<Account> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session
                     .QueryOver<Account>()
                     .Where(a => a.id == id)
@@ -33,8 +31,7 @@ namespace QManager.DAO
         public static IList<Account> GetByUsername(String username)
         {
             IList<Account> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session
                     .QueryOver<Account>()
                     .Where(a => a.username == username)
@@ -46,8 +43,7 @@ namespace QManager.DAO
         public static IList<Account> GetByEmail(String email)
         {
             IList<Account> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session
                     .QueryOver<Account>()
                     .Where(a => a.email == email)

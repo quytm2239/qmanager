@@ -17,7 +17,7 @@ namespace QManager.Model
 
         public Account()
         {
-           
+
         }
 
         public Account(string username, string password, string email, int status, int role)

@@ -41,9 +41,8 @@ namespace QManager
         {
             Console.WriteLine("CheckConnectity()");
             StartAwaitConnection();
-            if (mainConnection.State == ConnectionState.Open)
-            {
-                Console.WriteLine("Connected to: " + connectionStringBuilder.Server +":"+ connectionStringBuilder.Port + " SUCCESSFULLY!");
+            if (mainConnection.State == ConnectionState.Open) {
+                Console.WriteLine("Connected to: " + connectionStringBuilder.Server + ":" + connectionStringBuilder.Port + " SUCCESSFULLY!");
             }
             CreateTimerToCheckDBConnection();
         }
@@ -63,13 +62,10 @@ namespace QManager
                 mainConnection.State == ConnectionState.Connecting || backgroundConnection.State == ConnectionState.Connecting ||
                 mainConnection.State == ConnectionState.Open || backgroundConnection.State == ConnectionState.Open)
                 return;
-            try
-            {
+            try {
                 await mainConnection.OpenAsync();
                 //await backgroundConnection.OpenAsync();
-            }
-            catch (MySqlException mysqle)
-            {
+            } catch (MySqlException mysqle) {
                 Console.WriteLine(mysqle.Message);
                 IsDisconnected = true;
             }
@@ -86,9 +82,8 @@ namespace QManager
 
         public MySqlCommand GetCommand()
         {
-            while(mainConnection.State == ConnectionState.Connecting) {}
-            MySqlCommand command = new MySqlCommand
-            {
+            while (mainConnection.State == ConnectionState.Connecting) { }
+            MySqlCommand command = new MySqlCommand {
                 Connection = mainConnection
             };
             return command;
@@ -111,64 +106,50 @@ namespace QManager
 
         private async void ScheduleCheckDBConnectivityAsync()
         {
-            switch (testConnection.State)
-            {
+            switch (testConnection.State) {
                 case ConnectionState.Closed:
                 case ConnectionState.Broken:
-                    try { await testConnection.OpenAsync(); }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine(value: e.Message);
-                        if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
-
-                        //This will avoid Application terminated 
-                        //when Start app with NO Network Connection or DB Connection
-                        try {
-                            testConnection.Close();
-                            mainConnection.Close();
-                        } catch (NotSupportedException nse)
-                        { Console.WriteLine(value: nse.Message); }
-                        catch (NullReferenceException nre)
-                        { Console.WriteLine(value: nre.Message); }
-                        //--------------------------------------------------------//
-
-                        IsDisconnected = true;
-                    }
-                    break;
-                case ConnectionState.Connecting:
-                    if (IsDisconnected && !Program.IsAppClosed)
-                    {
-                        testConnection.Close();
-                        try { testConnection.Open(); }
-                        catch (Exception e)
-                        {
-                            Console.WriteLine(value: e.Message);
-                            testConnection.Close();
-                            mainConnection.Close();
-                            IsDisconnected = true;
-                        }
-                    }
-                    break;
-                case ConnectionState.Open:
+                try { await testConnection.OpenAsync(); } catch (Exception e) {
+                    Console.WriteLine(value: e.Message);
                     if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
-                    if (IsDisconnected && !Program.IsAppClosed)
-                    {
-                        await mainConnection.OpenAsync();
-                        IsDisconnected = false;
-                    }
 
                     //This will avoid Application terminated 
                     //when Start app with NO Network Connection or DB Connection
-                    try { testConnection.Close(); }
-                    catch (NotSupportedException nse)
-                    { Console.WriteLine(value: nse.Message); }
-                    catch (NullReferenceException nre)
-                    { Console.WriteLine(value: nre.Message); }
+                    try {
+                        testConnection.Close();
+                        mainConnection.Close();
+                    } catch (NotSupportedException nse) { Console.WriteLine(value: nse.Message); } catch (NullReferenceException nre) { Console.WriteLine(value: nre.Message); }
                     //--------------------------------------------------------//
-                    break;
+
+                    IsDisconnected = true;
+                }
+                break;
+                case ConnectionState.Connecting:
+                if (IsDisconnected && !Program.IsAppClosed) {
+                    testConnection.Close();
+                    try { testConnection.Open(); } catch (Exception e) {
+                        Console.WriteLine(value: e.Message);
+                        testConnection.Close();
+                        mainConnection.Close();
+                        IsDisconnected = true;
+                    }
+                }
+                break;
+                case ConnectionState.Open:
+                if (NetworkError != null) NetworkError.Invoke(testConnection, EventArgs.Empty);
+                if (IsDisconnected && !Program.IsAppClosed) {
+                    await mainConnection.OpenAsync();
+                    IsDisconnected = false;
+                }
+
+                //This will avoid Application terminated 
+                //when Start app with NO Network Connection or DB Connection
+                try { testConnection.Close(); } catch (NotSupportedException nse) { Console.WriteLine(value: nse.Message); } catch (NullReferenceException nre) { Console.WriteLine(value: nre.Message); }
+                //--------------------------------------------------------//
+                break;
                 case ConnectionState.Executing:
                 case ConnectionState.Fetching:
-                    break;
+                break;
             }
         }
     }

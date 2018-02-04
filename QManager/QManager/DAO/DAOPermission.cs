@@ -9,8 +9,7 @@ namespace QManager.DAO
         public static IList<Permission> GetAll()
         {
             IList<Permission> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session.QueryOver<Permission>().List<Permission>();
             }
             return objList;
@@ -19,8 +18,7 @@ namespace QManager.DAO
         public static IList<Permission> GetById(Int64 id)
         {
             IList<Permission> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session
                     .QueryOver<Permission>()
                     .Where(a => a.id == id)
@@ -32,8 +30,7 @@ namespace QManager.DAO
         public static IList<Permission> GetByFunctionId(Int64 function_id)
         {
             IList<Permission> permissionList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 permissionList = session
                     .QueryOver<Permission>()
                     .Where(a => a.function_id == function_id)
@@ -45,8 +42,7 @@ namespace QManager.DAO
         public static IList<Permission> GetByDepartmentId(Int64 department_id)
         {
             IList<Permission> permissionList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 permissionList = session
                     .QueryOver<Permission>()
                     .Where(a => a.deparment_id == department_id)
@@ -58,8 +54,7 @@ namespace QManager.DAO
         public static IList<Permission> GetByRole(int role)
         {
             IList<Permission> permissionList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 permissionList = session
                     .QueryOver<Permission>()
                     .Where(a => a.role == role)
@@ -71,8 +66,7 @@ namespace QManager.DAO
         public static IList<Permission> GetByPermission(int permission)
         {
             IList<Permission> permissionList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 permissionList = session
                     .QueryOver<Permission>()
                     .Where(a => a.permission == permission)

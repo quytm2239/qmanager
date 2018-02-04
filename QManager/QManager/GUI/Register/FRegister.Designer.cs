@@ -28,423 +28,605 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TableLayoutParent = new System.Windows.Forms.TableLayoutPanel();
+            this.TableLayoutPanelInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.LabelEmail = new System.Windows.Forms.Label();
+            this.LabelPhoneNo = new System.Windows.Forms.Label();
+            this.LabelAddress = new System.Windows.Forms.Label();
+            this.LabelDoB = new System.Windows.Forms.Label();
+            this.TextBoxFullName = new System.Windows.Forms.TextBox();
+            this.TextBoxAddress = new System.Windows.Forms.TextBox();
+            this.TextBoxPhoneNo = new System.Windows.Forms.TextBox();
             this.LabelFullName = new System.Windows.Forms.Label();
+            this.PanelTableDoBAndGender = new System.Windows.Forms.TableLayoutPanel();
             this.LabelGender = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.TextBoxDoBDay = new System.Windows.Forms.TextBox();
+            this.TextBoxDoBMonth = new System.Windows.Forms.TextBox();
+            this.TextBoxDoBYear = new System.Windows.Forms.TextBox();
+            this.ComboBoxGender = new System.Windows.Forms.ComboBox();
+            this.TextBoxEmail = new System.Windows.Forms.TextBox();
+            this.PanelTableBottomHalf = new System.Windows.Forms.TableLayoutPanel();
+            this.LabelDepartment = new System.Windows.Forms.Label();
+            this.LabelJobTitle = new System.Windows.Forms.Label();
+            this.TextBoxJobTitle = new System.Windows.Forms.TextBox();
+            this.LabelRole = new System.Windows.Forms.Label();
+            this.LabelStaffCode = new System.Windows.Forms.Label();
+            this.TextBoxStaffCode = new System.Windows.Forms.TextBox();
+            this.LabelContractCode = new System.Windows.Forms.Label();
+            this.TextBoxContractCode = new System.Windows.Forms.TextBox();
+            this.LabelStartDate = new System.Windows.Forms.Label();
+            this.TextBoxStartDate = new System.Windows.Forms.TextBox();
+            this.ButtonRegister = new System.Windows.Forms.Button();
+            this.ButtonCancel = new System.Windows.Forms.Button();
+            this.ComboBoxDepartment = new System.Windows.Forms.ComboBox();
+            this.ComboBoxRole = new System.Windows.Forms.ComboBox();
+            this.LabelUsername = new System.Windows.Forms.Label();
+            this.LabelPassword = new System.Windows.Forms.Label();
+            this.TextBoxUsername = new System.Windows.Forms.TextBox();
+            this.TextBoxPassword = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.TableLayoutParent.SuspendLayout();
+            this.TableLayoutPanelInfo.SuspendLayout();
+            this.PanelTableDoBAndGender.SuspendLayout();
+            this.PanelTableBottomHalf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // TableLayoutParent
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 3, 9);
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 1, 12);
-            this.tableLayoutPanel1.Controls.Add(this.textBox8, 3, 12);
-            this.tableLayoutPanel1.Controls.Add(this.textBox9, 1, 15);
-            this.tableLayoutPanel1.Controls.Add(this.textBox10, 3, 15);
-            this.tableLayoutPanel1.Controls.Add(this.textBox11, 1, 18);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 3, 18);
-            this.tableLayoutPanel1.Controls.Add(this.LabelFullName, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.LabelGender, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 14);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 17);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 3, 14);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 3, 11);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 3, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 3, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 20;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(592, 373);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.TableLayoutParent.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TableLayoutParent.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.TableLayoutParent.ColumnCount = 2;
+            this.TableLayoutParent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutParent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.TableLayoutParent.Controls.Add(this.TableLayoutPanelInfo, 0, 0);
+            this.TableLayoutParent.Controls.Add(this.PanelTableBottomHalf, 0, 1);
+            this.TableLayoutParent.Controls.Add(this.pictureBox1, 1, 0);
+            this.TableLayoutParent.Location = new System.Drawing.Point(15, 15);
+            this.TableLayoutParent.Margin = new System.Windows.Forms.Padding(0);
+            this.TableLayoutParent.Name = "TableLayoutParent";
+            this.TableLayoutParent.RowCount = 2;
+            this.TableLayoutParent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.TableLayoutParent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutParent.Size = new System.Drawing.Size(570, 330);
+            this.TableLayoutParent.TabIndex = 0;
             // 
-            // textBox1
+            // TableLayoutPanelInfo
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(15, 30);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(273, 29);
-            this.textBox1.TabIndex = 0;
+            this.TableLayoutPanelInfo.ColumnCount = 2;
+            this.TableLayoutPanelInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.TableLayoutPanelInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TableLayoutPanelInfo.Controls.Add(this.LabelEmail, 0, 4);
+            this.TableLayoutPanelInfo.Controls.Add(this.LabelPhoneNo, 0, 3);
+            this.TableLayoutPanelInfo.Controls.Add(this.LabelAddress, 0, 2);
+            this.TableLayoutPanelInfo.Controls.Add(this.LabelDoB, 0, 1);
+            this.TableLayoutPanelInfo.Controls.Add(this.TextBoxFullName, 1, 0);
+            this.TableLayoutPanelInfo.Controls.Add(this.TextBoxAddress, 1, 2);
+            this.TableLayoutPanelInfo.Controls.Add(this.TextBoxPhoneNo, 1, 3);
+            this.TableLayoutPanelInfo.Controls.Add(this.LabelFullName, 0, 0);
+            this.TableLayoutPanelInfo.Controls.Add(this.PanelTableDoBAndGender, 1, 1);
+            this.TableLayoutPanelInfo.Controls.Add(this.TextBoxEmail, 1, 4);
+            this.TableLayoutPanelInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TableLayoutPanelInfo.Location = new System.Drawing.Point(1, 1);
+            this.TableLayoutPanelInfo.Margin = new System.Windows.Forms.Padding(0);
+            this.TableLayoutPanelInfo.Name = "TableLayoutPanelInfo";
+            this.TableLayoutPanelInfo.RowCount = 5;
+            this.TableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutPanelInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.TableLayoutPanelInfo.Size = new System.Drawing.Size(417, 150);
+            this.TableLayoutPanelInfo.TabIndex = 3;
             // 
-            // textBox2
+            // LabelEmail
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(303, 30);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(273, 29);
-            this.textBox2.TabIndex = 1;
+            this.LabelEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelEmail.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelEmail.Location = new System.Drawing.Point(0, 120);
+            this.LabelEmail.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelEmail.Name = "LabelEmail";
+            this.LabelEmail.Size = new System.Drawing.Size(120, 30);
+            this.LabelEmail.TabIndex = 104;
+            this.LabelEmail.Text = "Email:";
+            this.LabelEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox3
+            // LabelPhoneNo
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(15, 85);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(273, 29);
-            this.textBox3.TabIndex = 2;
+            this.LabelPhoneNo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelPhoneNo.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPhoneNo.Location = new System.Drawing.Point(0, 90);
+            this.LabelPhoneNo.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelPhoneNo.Name = "LabelPhoneNo";
+            this.LabelPhoneNo.Size = new System.Drawing.Size(120, 30);
+            this.LabelPhoneNo.TabIndex = 103;
+            this.LabelPhoneNo.Text = "Số điện thoại:";
+            this.LabelPhoneNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // LabelAddress
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(303, 85);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(273, 29);
-            this.textBox4.TabIndex = 3;
+            this.LabelAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelAddress.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelAddress.Location = new System.Drawing.Point(0, 60);
+            this.LabelAddress.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelAddress.Name = "LabelAddress";
+            this.LabelAddress.Size = new System.Drawing.Size(120, 30);
+            this.LabelAddress.TabIndex = 102;
+            this.LabelAddress.Text = "Địa chỉ:";
+            this.LabelAddress.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox5
+            // LabelDoB
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(15, 140);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(273, 29);
-            this.textBox5.TabIndex = 4;
+            this.LabelDoB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelDoB.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDoB.Location = new System.Drawing.Point(0, 30);
+            this.LabelDoB.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelDoB.Name = "LabelDoB";
+            this.LabelDoB.Size = new System.Drawing.Size(120, 30);
+            this.LabelDoB.TabIndex = 101;
+            this.LabelDoB.Text = "Ngày sinh:";
+            this.LabelDoB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox6
+            // TextBoxFullName
             // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(303, 140);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(273, 29);
-            this.textBox6.TabIndex = 5;
+            this.TextBoxFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxFullName.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxFullName.Location = new System.Drawing.Point(120, 0);
+            this.TextBoxFullName.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxFullName.Name = "TextBoxFullName";
+            this.TextBoxFullName.Size = new System.Drawing.Size(297, 30);
+            this.TextBoxFullName.TabIndex = 1;
             // 
-            // textBox7
+            // TextBoxAddress
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(15, 195);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(273, 29);
-            this.textBox7.TabIndex = 6;
+            this.TextBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxAddress.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxAddress.Location = new System.Drawing.Point(120, 60);
+            this.TextBoxAddress.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxAddress.Name = "TextBoxAddress";
+            this.TextBoxAddress.Size = new System.Drawing.Size(297, 30);
+            this.TextBoxAddress.TabIndex = 6;
             // 
-            // textBox8
+            // TextBoxPhoneNo
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(303, 195);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(273, 29);
-            this.textBox8.TabIndex = 7;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(15, 250);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(273, 29);
-            this.textBox9.TabIndex = 8;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(303, 250);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(273, 29);
-            this.textBox10.TabIndex = 9;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(15, 305);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(273, 53);
-            this.textBox11.TabIndex = 10;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(303, 305);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(273, 53);
-            this.tableLayoutPanel2.TabIndex = 11;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(136, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 53);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(136, 53);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.TextBoxPhoneNo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxPhoneNo.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxPhoneNo.Location = new System.Drawing.Point(120, 90);
+            this.TextBoxPhoneNo.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxPhoneNo.Name = "TextBoxPhoneNo";
+            this.TextBoxPhoneNo.Size = new System.Drawing.Size(297, 30);
+            this.TextBoxPhoneNo.TabIndex = 7;
             // 
             // LabelFullName
             // 
             this.LabelFullName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelFullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelFullName.Location = new System.Drawing.Point(15, 10);
+            this.LabelFullName.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelFullName.Location = new System.Drawing.Point(0, 0);
             this.LabelFullName.Margin = new System.Windows.Forms.Padding(0);
             this.LabelFullName.Name = "LabelFullName";
-            this.LabelFullName.Size = new System.Drawing.Size(273, 20);
-            this.LabelFullName.TabIndex = 12;
-            this.LabelFullName.Text = "Họ và Tên:";
-            this.LabelFullName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelFullName.Size = new System.Drawing.Size(120, 30);
+            this.LabelFullName.TabIndex = 100;
+            this.LabelFullName.Text = "Họ và tên:";
+            this.LabelFullName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PanelTableDoBAndGender
+            // 
+            this.PanelTableDoBAndGender.ColumnCount = 5;
+            this.PanelTableDoBAndGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.PanelTableDoBAndGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.PanelTableDoBAndGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.PanelTableDoBAndGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.PanelTableDoBAndGender.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.PanelTableDoBAndGender.Controls.Add(this.LabelGender, 3, 0);
+            this.PanelTableDoBAndGender.Controls.Add(this.TextBoxDoBDay, 0, 0);
+            this.PanelTableDoBAndGender.Controls.Add(this.TextBoxDoBMonth, 1, 0);
+            this.PanelTableDoBAndGender.Controls.Add(this.TextBoxDoBYear, 2, 0);
+            this.PanelTableDoBAndGender.Controls.Add(this.ComboBoxGender, 4, 0);
+            this.PanelTableDoBAndGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelTableDoBAndGender.Location = new System.Drawing.Point(120, 30);
+            this.PanelTableDoBAndGender.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelTableDoBAndGender.Name = "PanelTableDoBAndGender";
+            this.PanelTableDoBAndGender.RowCount = 1;
+            this.PanelTableDoBAndGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.PanelTableDoBAndGender.Size = new System.Drawing.Size(297, 30);
+            this.PanelTableDoBAndGender.TabIndex = 1;
             // 
             // LabelGender
             // 
             this.LabelGender.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LabelGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelGender.Location = new System.Drawing.Point(15, 65);
+            this.LabelGender.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelGender.Location = new System.Drawing.Point(110, 0);
             this.LabelGender.Margin = new System.Windows.Forms.Padding(0);
             this.LabelGender.Name = "LabelGender";
-            this.LabelGender.Size = new System.Drawing.Size(273, 20);
-            this.LabelGender.TabIndex = 13;
+            this.LabelGender.Size = new System.Drawing.Size(80, 30);
+            this.LabelGender.TabIndex = 4;
             this.LabelGender.Text = "Giới tính:";
-            this.LabelGender.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelGender.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // TextBoxDoBDay
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 120);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(273, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Ngày sinh:";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TextBoxDoBDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxDoBDay.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxDoBDay.Location = new System.Drawing.Point(0, 0);
+            this.TextBoxDoBDay.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxDoBDay.Name = "TextBoxDoBDay";
+            this.TextBoxDoBDay.Size = new System.Drawing.Size(30, 30);
+            this.TextBoxDoBDay.TabIndex = 2;
+            this.TextBoxDoBDay.TextChanged += new System.EventHandler(this.TextBoxDoBDay_TextChanged);
             // 
-            // label4
+            // TextBoxDoBMonth
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 175);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(273, 20);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Số điện thoại:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TextBoxDoBMonth.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxDoBMonth.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxDoBMonth.Location = new System.Drawing.Point(30, 0);
+            this.TextBoxDoBMonth.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxDoBMonth.Name = "TextBoxDoBMonth";
+            this.TextBoxDoBMonth.Size = new System.Drawing.Size(30, 30);
+            this.TextBoxDoBMonth.TabIndex = 3;
+            this.TextBoxDoBMonth.TextChanged += new System.EventHandler(this.TextBoxDoBMonth_TextChanged);
             // 
-            // label5
+            // TextBoxDoBYear
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 230);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(273, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Phòng ban:";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TextBoxDoBYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxDoBYear.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxDoBYear.Location = new System.Drawing.Point(60, 0);
+            this.TextBoxDoBYear.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxDoBYear.Name = "TextBoxDoBYear";
+            this.TextBoxDoBYear.Size = new System.Drawing.Size(50, 30);
+            this.TextBoxDoBYear.TabIndex = 4;
+            this.TextBoxDoBYear.TextChanged += new System.EventHandler(this.TextBoxDoBYear_TextChanged);
             // 
-            // label6
+            // ComboBoxGender
             // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 285);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(273, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Địa chỉ:";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ComboBoxGender.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxGender.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxGender.FormattingEnabled = true;
+            this.ComboBoxGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
+            this.ComboBoxGender.Location = new System.Drawing.Point(190, 0);
+            this.ComboBoxGender.Margin = new System.Windows.Forms.Padding(0);
+            this.ComboBoxGender.Name = "ComboBoxGender";
+            this.ComboBoxGender.Size = new System.Drawing.Size(107, 31);
+            this.ComboBoxGender.TabIndex = 5;
+            this.ComboBoxGender.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGender_SelectedIndexChanged);
             // 
-            // label8
+            // TextBoxEmail
             // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(303, 230);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(273, 20);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Chức vụ:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TextBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxEmail.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxEmail.Location = new System.Drawing.Point(120, 120);
+            this.TextBoxEmail.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxEmail.Name = "TextBoxEmail";
+            this.TextBoxEmail.Size = new System.Drawing.Size(297, 30);
+            this.TextBoxEmail.TabIndex = 8;
             // 
-            // label9
+            // PanelTableBottomHalf
             // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(303, 175);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(273, 20);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Ngày bắt đầu:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PanelTableBottomHalf.ColumnCount = 4;
+            this.TableLayoutParent.SetColumnSpan(this.PanelTableBottomHalf, 2);
+            this.PanelTableBottomHalf.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.PanelTableBottomHalf.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.PanelTableBottomHalf.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.PanelTableBottomHalf.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.PanelTableBottomHalf.Controls.Add(this.LabelDepartment, 0, 0);
+            this.PanelTableBottomHalf.Controls.Add(this.LabelJobTitle, 2, 0);
+            this.PanelTableBottomHalf.Controls.Add(this.TextBoxJobTitle, 3, 0);
+            this.PanelTableBottomHalf.Controls.Add(this.LabelRole, 0, 1);
+            this.PanelTableBottomHalf.Controls.Add(this.LabelStaffCode, 2, 1);
+            this.PanelTableBottomHalf.Controls.Add(this.TextBoxStaffCode, 3, 1);
+            this.PanelTableBottomHalf.Controls.Add(this.LabelContractCode, 0, 2);
+            this.PanelTableBottomHalf.Controls.Add(this.TextBoxContractCode, 1, 2);
+            this.PanelTableBottomHalf.Controls.Add(this.LabelStartDate, 2, 2);
+            this.PanelTableBottomHalf.Controls.Add(this.TextBoxStartDate, 3, 2);
+            this.PanelTableBottomHalf.Controls.Add(this.ButtonRegister, 0, 4);
+            this.PanelTableBottomHalf.Controls.Add(this.ButtonCancel, 2, 4);
+            this.PanelTableBottomHalf.Controls.Add(this.ComboBoxDepartment, 1, 0);
+            this.PanelTableBottomHalf.Controls.Add(this.ComboBoxRole, 1, 1);
+            this.PanelTableBottomHalf.Controls.Add(this.LabelUsername, 0, 3);
+            this.PanelTableBottomHalf.Controls.Add(this.LabelPassword, 2, 3);
+            this.PanelTableBottomHalf.Controls.Add(this.TextBoxUsername, 1, 3);
+            this.PanelTableBottomHalf.Controls.Add(this.TextBoxPassword, 3, 3);
+            this.PanelTableBottomHalf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelTableBottomHalf.Location = new System.Drawing.Point(1, 152);
+            this.PanelTableBottomHalf.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelTableBottomHalf.Name = "PanelTableBottomHalf";
+            this.PanelTableBottomHalf.RowCount = 5;
+            this.PanelTableBottomHalf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.PanelTableBottomHalf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.PanelTableBottomHalf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.PanelTableBottomHalf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.PanelTableBottomHalf.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.PanelTableBottomHalf.Size = new System.Drawing.Size(568, 177);
+            this.PanelTableBottomHalf.TabIndex = 4;
             // 
-            // label10
+            // LabelDepartment
             // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(303, 120);
-            this.label10.Margin = new System.Windows.Forms.Padding(0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(273, 20);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Nhóm quyền:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelDepartment.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelDepartment.Location = new System.Drawing.Point(0, 0);
+            this.LabelDepartment.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelDepartment.Name = "LabelDepartment";
+            this.LabelDepartment.Size = new System.Drawing.Size(120, 30);
+            this.LabelDepartment.TabIndex = 105;
+            this.LabelDepartment.Text = "Bộ phận:";
+            this.LabelDepartment.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label11
+            // LabelJobTitle
             // 
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(303, 65);
-            this.label11.Margin = new System.Windows.Forms.Padding(0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(273, 20);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Mật khẩu:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LabelJobTitle.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelJobTitle.Location = new System.Drawing.Point(284, 0);
+            this.LabelJobTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelJobTitle.Name = "LabelJobTitle";
+            this.LabelJobTitle.Size = new System.Drawing.Size(120, 30);
+            this.LabelJobTitle.TabIndex = 108;
+            this.LabelJobTitle.Text = "Chức vụ:";
+            this.LabelJobTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // TextBoxJobTitle
             // 
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(303, 10);
-            this.label12.Margin = new System.Windows.Forms.Padding(0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(273, 20);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Tên đăng nhập:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TextBoxJobTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxJobTitle.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxJobTitle.Location = new System.Drawing.Point(404, 0);
+            this.TextBoxJobTitle.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxJobTitle.Name = "TextBoxJobTitle";
+            this.TextBoxJobTitle.Size = new System.Drawing.Size(164, 30);
+            this.TextBoxJobTitle.TabIndex = 12;
+            // 
+            // LabelRole
+            // 
+            this.LabelRole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelRole.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelRole.Location = new System.Drawing.Point(0, 30);
+            this.LabelRole.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelRole.Name = "LabelRole";
+            this.LabelRole.Size = new System.Drawing.Size(120, 30);
+            this.LabelRole.TabIndex = 106;
+            this.LabelRole.Text = "Cấp bậc:";
+            this.LabelRole.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LabelStaffCode
+            // 
+            this.LabelStaffCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelStaffCode.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelStaffCode.Location = new System.Drawing.Point(284, 30);
+            this.LabelStaffCode.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelStaffCode.Name = "LabelStaffCode";
+            this.LabelStaffCode.Size = new System.Drawing.Size(120, 30);
+            this.LabelStaffCode.TabIndex = 109;
+            this.LabelStaffCode.Text = "Mã NV:";
+            this.LabelStaffCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TextBoxStaffCode
+            // 
+            this.TextBoxStaffCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxStaffCode.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxStaffCode.Location = new System.Drawing.Point(404, 30);
+            this.TextBoxStaffCode.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxStaffCode.Name = "TextBoxStaffCode";
+            this.TextBoxStaffCode.Size = new System.Drawing.Size(164, 30);
+            this.TextBoxStaffCode.TabIndex = 13;
+            // 
+            // LabelContractCode
+            // 
+            this.LabelContractCode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelContractCode.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelContractCode.Location = new System.Drawing.Point(0, 60);
+            this.LabelContractCode.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelContractCode.Name = "LabelContractCode";
+            this.LabelContractCode.Size = new System.Drawing.Size(120, 30);
+            this.LabelContractCode.TabIndex = 107;
+            this.LabelContractCode.Text = "Mã hợp đồng:";
+            this.LabelContractCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TextBoxContractCode
+            // 
+            this.TextBoxContractCode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxContractCode.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxContractCode.Location = new System.Drawing.Point(120, 60);
+            this.TextBoxContractCode.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxContractCode.Name = "TextBoxContractCode";
+            this.TextBoxContractCode.Size = new System.Drawing.Size(164, 30);
+            this.TextBoxContractCode.TabIndex = 11;
+            // 
+            // LabelStartDate
+            // 
+            this.LabelStartDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelStartDate.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelStartDate.Location = new System.Drawing.Point(284, 60);
+            this.LabelStartDate.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelStartDate.Name = "LabelStartDate";
+            this.LabelStartDate.Size = new System.Drawing.Size(120, 30);
+            this.LabelStartDate.TabIndex = 110;
+            this.LabelStartDate.Text = "Ngày bắt đầu:";
+            this.LabelStartDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TextBoxStartDate
+            // 
+            this.TextBoxStartDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxStartDate.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxStartDate.Location = new System.Drawing.Point(404, 60);
+            this.TextBoxStartDate.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxStartDate.Name = "TextBoxStartDate";
+            this.TextBoxStartDate.Size = new System.Drawing.Size(164, 30);
+            this.TextBoxStartDate.TabIndex = 14;
+            // 
+            // ButtonRegister
+            // 
+            this.ButtonRegister.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.PanelTableBottomHalf.SetColumnSpan(this.ButtonRegister, 2);
+            this.ButtonRegister.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonRegister.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLight;
+            this.ButtonRegister.FlatAppearance.BorderSize = 0;
+            this.ButtonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.ButtonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonRegister.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonRegister.Location = new System.Drawing.Point(5, 125);
+            this.ButtonRegister.Margin = new System.Windows.Forms.Padding(5);
+            this.ButtonRegister.Name = "ButtonRegister";
+            this.ButtonRegister.Size = new System.Drawing.Size(274, 47);
+            this.ButtonRegister.TabIndex = 111;
+            this.ButtonRegister.Text = "Đăng ký";
+            this.ButtonRegister.UseVisualStyleBackColor = false;
+            this.ButtonRegister.Click += new System.EventHandler(this.ButtonRegister_Click);
+            // 
+            // ButtonCancel
+            // 
+            this.ButtonCancel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.PanelTableBottomHalf.SetColumnSpan(this.ButtonCancel, 2);
+            this.ButtonCancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ButtonCancel.FlatAppearance.BorderSize = 0;
+            this.ButtonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ButtonCancel.Location = new System.Drawing.Point(289, 125);
+            this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
+            this.ButtonCancel.Name = "ButtonCancel";
+            this.ButtonCancel.Size = new System.Drawing.Size(274, 47);
+            this.ButtonCancel.TabIndex = 112;
+            this.ButtonCancel.Text = "Hủy bỏ";
+            this.ButtonCancel.UseVisualStyleBackColor = false;
+            this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
+            // 
+            // ComboBoxDepartment
+            // 
+            this.ComboBoxDepartment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxDepartment.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxDepartment.FormattingEnabled = true;
+            this.ComboBoxDepartment.Location = new System.Drawing.Point(120, 0);
+            this.ComboBoxDepartment.Margin = new System.Windows.Forms.Padding(0);
+            this.ComboBoxDepartment.Name = "ComboBoxDepartment";
+            this.ComboBoxDepartment.Size = new System.Drawing.Size(164, 31);
+            this.ComboBoxDepartment.TabIndex = 113;
+            // 
+            // ComboBoxRole
+            // 
+            this.ComboBoxRole.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComboBoxRole.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBoxRole.FormattingEnabled = true;
+            this.ComboBoxRole.Location = new System.Drawing.Point(120, 30);
+            this.ComboBoxRole.Margin = new System.Windows.Forms.Padding(0);
+            this.ComboBoxRole.Name = "ComboBoxRole";
+            this.ComboBoxRole.Size = new System.Drawing.Size(164, 31);
+            this.ComboBoxRole.TabIndex = 113;
+            // 
+            // LabelUsername
+            // 
+            this.LabelUsername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelUsername.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelUsername.Location = new System.Drawing.Point(0, 90);
+            this.LabelUsername.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelUsername.Name = "LabelUsername";
+            this.LabelUsername.Size = new System.Drawing.Size(120, 30);
+            this.LabelUsername.TabIndex = 107;
+            this.LabelUsername.Text = "Tài khoản:";
+            this.LabelUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LabelPassword
+            // 
+            this.LabelPassword.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LabelPassword.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPassword.Location = new System.Drawing.Point(284, 90);
+            this.LabelPassword.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelPassword.Name = "LabelPassword";
+            this.LabelPassword.Size = new System.Drawing.Size(120, 30);
+            this.LabelPassword.TabIndex = 107;
+            this.LabelPassword.Text = "Mật khẩu:";
+            this.LabelPassword.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TextBoxUsername
+            // 
+            this.TextBoxUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxUsername.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxUsername.Location = new System.Drawing.Point(120, 90);
+            this.TextBoxUsername.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxUsername.Name = "TextBoxUsername";
+            this.TextBoxUsername.Size = new System.Drawing.Size(164, 30);
+            this.TextBoxUsername.TabIndex = 15;
+            // 
+            // TextBoxPassword
+            // 
+            this.TextBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.TextBoxPassword.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBoxPassword.Location = new System.Drawing.Point(404, 90);
+            this.TextBoxPassword.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBoxPassword.Name = "TextBoxPassword";
+            this.TextBoxPassword.Size = new System.Drawing.Size(164, 30);
+            this.TextBoxPassword.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::QManager.Properties.Resources.friendly_for_facebook;
+            this.pictureBox1.Location = new System.Drawing.Point(439, 11);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(20, 10, 10, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // FRegister
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(592, 373);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(600, 360);
+            this.Controls.Add(this.TableLayoutParent);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FRegister";
+            this.Padding = new System.Windows.Forms.Padding(15);
             this.Text = "FRegister";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
+            this.TableLayoutParent.ResumeLayout(false);
+            this.TableLayoutPanelInfo.ResumeLayout(false);
+            this.TableLayoutPanelInfo.PerformLayout();
+            this.PanelTableDoBAndGender.ResumeLayout(false);
+            this.PanelTableDoBAndGender.PerformLayout();
+            this.PanelTableBottomHalf.ResumeLayout(false);
+            this.PanelTableBottomHalf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TableLayoutPanel TableLayoutParent;
+        private System.Windows.Forms.TableLayoutPanel TableLayoutPanelInfo;
+        private System.Windows.Forms.TextBox TextBoxFullName;
+        private System.Windows.Forms.TextBox TextBoxAddress;
+        private System.Windows.Forms.TextBox TextBoxPhoneNo;
         private System.Windows.Forms.Label LabelFullName;
+        private System.Windows.Forms.Label LabelEmail;
+        private System.Windows.Forms.Label LabelPhoneNo;
+        private System.Windows.Forms.Label LabelAddress;
+        private System.Windows.Forms.Label LabelDoB;
         private System.Windows.Forms.Label LabelGender;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox ComboBoxGender;
+        private System.Windows.Forms.TextBox TextBoxEmail;
+        private System.Windows.Forms.TableLayoutPanel PanelTableBottomHalf;
+        private System.Windows.Forms.Label LabelDepartment;
+        private System.Windows.Forms.Label LabelJobTitle;
+        private System.Windows.Forms.TextBox TextBoxJobTitle;
+        private System.Windows.Forms.Label LabelRole;
+        private System.Windows.Forms.Label LabelStaffCode;
+        private System.Windows.Forms.TextBox TextBoxStaffCode;
+        private System.Windows.Forms.Label LabelContractCode;
+        private System.Windows.Forms.TextBox TextBoxContractCode;
+        private System.Windows.Forms.Label LabelStartDate;
+        private System.Windows.Forms.TextBox TextBoxStartDate;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button ButtonRegister;
+        private System.Windows.Forms.Button ButtonCancel;
+        private System.Windows.Forms.TableLayoutPanel PanelTableDoBAndGender;
+        private System.Windows.Forms.TextBox TextBoxDoBDay;
+        private System.Windows.Forms.TextBox TextBoxDoBMonth;
+        private System.Windows.Forms.TextBox TextBoxDoBYear;
+        private System.Windows.Forms.ComboBox ComboBoxDepartment;
+        private System.Windows.Forms.ComboBox ComboBoxRole;
+        private System.Windows.Forms.Label LabelUsername;
+        private System.Windows.Forms.Label LabelPassword;
+        private System.Windows.Forms.TextBox TextBoxUsername;
+        private System.Windows.Forms.TextBox TextBoxPassword;
     }
 }

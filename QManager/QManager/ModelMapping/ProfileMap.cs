@@ -18,6 +18,8 @@ namespace QManager.ModelMapping
             Map(x => x.department_id);
             Map(x => x.job_title);
             Map(x => x.join_date);
+            Map(x => x.contract_code);
+            Map(x => x.staff_code);
             Map(x => x.createdAt).Column("createdAt").ReadOnly();
             Map(x => x.updatedAt).Column("updatedAt").ReadOnly();
         }

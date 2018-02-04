@@ -9,8 +9,7 @@ namespace QManager.DAO
         public static IList<Department> GetAll()
         {
             IList<Department> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session.QueryOver<Department>().List<Department>();
             }
             return objList;
@@ -19,8 +18,7 @@ namespace QManager.DAO
         public static IList<Department> GetById(Int64 id)
         {
             IList<Department> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session
                     .QueryOver<Department>()
                     .Where(a => a.id == id)
@@ -32,8 +30,7 @@ namespace QManager.DAO
         public static IList<Department> GetByName(String name)
         {
             IList<Department> objList;
-            using (var session = GetSession())
-            {
+            using (var session = GetSession()) {
                 objList = session
                     .QueryOver<Department>()
                     .Where(a => a.name == name)
