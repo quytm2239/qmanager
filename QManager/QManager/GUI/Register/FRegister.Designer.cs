@@ -372,7 +372,7 @@
             this.TextBoxJobTitle.Margin = new System.Windows.Forms.Padding(0);
             this.TextBoxJobTitle.Name = "TextBoxJobTitle";
             this.TextBoxJobTitle.Size = new System.Drawing.Size(164, 30);
-            this.TextBoxJobTitle.TabIndex = 12;
+            this.TextBoxJobTitle.TabIndex = 10;
             // 
             // LabelRole
             // 
@@ -406,7 +406,7 @@
             this.TextBoxStaffCode.Margin = new System.Windows.Forms.Padding(0);
             this.TextBoxStaffCode.Name = "TextBoxStaffCode";
             this.TextBoxStaffCode.Size = new System.Drawing.Size(164, 30);
-            this.TextBoxStaffCode.TabIndex = 13;
+            this.TextBoxStaffCode.TabIndex = 12;
             // 
             // LabelContractCode
             // 
@@ -428,7 +428,7 @@
             this.TextBoxContractCode.Margin = new System.Windows.Forms.Padding(0);
             this.TextBoxContractCode.Name = "TextBoxContractCode";
             this.TextBoxContractCode.Size = new System.Drawing.Size(164, 30);
-            this.TextBoxContractCode.TabIndex = 11;
+            this.TextBoxContractCode.TabIndex = 13;
             // 
             // LabelStartDate
             // 
@@ -462,10 +462,10 @@
             this.ButtonRegister.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.ButtonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonRegister.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonRegister.Location = new System.Drawing.Point(5, 125);
-            this.ButtonRegister.Margin = new System.Windows.Forms.Padding(5);
+            this.ButtonRegister.Location = new System.Drawing.Point(0, 120);
+            this.ButtonRegister.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonRegister.Name = "ButtonRegister";
-            this.ButtonRegister.Size = new System.Drawing.Size(274, 47);
+            this.ButtonRegister.Size = new System.Drawing.Size(284, 57);
             this.ButtonRegister.TabIndex = 111;
             this.ButtonRegister.Text = "Đăng ký";
             this.ButtonRegister.UseVisualStyleBackColor = false;
@@ -480,10 +480,10 @@
             this.ButtonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
             this.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonCancel.Location = new System.Drawing.Point(289, 125);
-            this.ButtonCancel.Margin = new System.Windows.Forms.Padding(5);
+            this.ButtonCancel.Location = new System.Drawing.Point(284, 120);
+            this.ButtonCancel.Margin = new System.Windows.Forms.Padding(0);
             this.ButtonCancel.Name = "ButtonCancel";
-            this.ButtonCancel.Size = new System.Drawing.Size(274, 47);
+            this.ButtonCancel.Size = new System.Drawing.Size(284, 57);
             this.ButtonCancel.TabIndex = 112;
             this.ButtonCancel.Text = "Hủy bỏ";
             this.ButtonCancel.UseVisualStyleBackColor = false;
@@ -498,7 +498,7 @@
             this.ComboBoxDepartment.Margin = new System.Windows.Forms.Padding(0);
             this.ComboBoxDepartment.Name = "ComboBoxDepartment";
             this.ComboBoxDepartment.Size = new System.Drawing.Size(164, 31);
-            this.ComboBoxDepartment.TabIndex = 113;
+            this.ComboBoxDepartment.TabIndex = 9;
             // 
             // ComboBoxRole
             // 
@@ -509,7 +509,7 @@
             this.ComboBoxRole.Margin = new System.Windows.Forms.Padding(0);
             this.ComboBoxRole.Name = "ComboBoxRole";
             this.ComboBoxRole.Size = new System.Drawing.Size(164, 31);
-            this.ComboBoxRole.TabIndex = 113;
+            this.ComboBoxRole.TabIndex = 11;
             // 
             // LabelUsername
             // 
@@ -577,6 +577,7 @@
             this.Name = "FRegister";
             this.Padding = new System.Windows.Forms.Padding(15);
             this.Text = "FRegister";
+            this.Load += new System.EventHandler(this.FRegister_Load);
             this.TableLayoutParent.ResumeLayout(false);
             this.TableLayoutPanelInfo.ResumeLayout(false);
             this.TableLayoutPanelInfo.PerformLayout();

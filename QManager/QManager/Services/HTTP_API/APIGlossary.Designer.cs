@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QManager.CustomProperties {
+namespace QManager.Services.HTTP_API {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace QManager.CustomProperties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class TABLE_NAME {
+    internal class APIGlossary {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal TABLE_NAME() {
+        internal APIGlossary() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("QManager.CustomProperties.TABLE_NAME", typeof(TABLE_NAME).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("QManager.Services.HTTP_API.APIGlossary", typeof(APIGlossary).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace QManager.CustomProperties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,56 +61,29 @@ namespace QManager.CustomProperties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to account.
+        ///   Looks up a localized string similar to /public/login.
         /// </summary>
-        public static string ACCOUNT {
+        internal static string API_LOGIN {
             get {
-                return ResourceManager.GetString("ACCOUNT", resourceCulture);
+                return ResourceManager.GetString("API_LOGIN", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to department.
+        ///   Looks up a localized string similar to password.
         /// </summary>
-        public static string DEPARTMENT {
+        internal static string KEY_PASSWORD {
             get {
-                return ResourceManager.GetString("DEPARTMENT", resourceCulture);
+                return ResourceManager.GetString("KEY_PASSWORD", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to function.
+        ///   Looks up a localized string similar to username.
         /// </summary>
-        public static string FUNCTION {
+        internal static string KEY_USERNAME {
             get {
-                return ResourceManager.GetString("FUNCTION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to permission.
-        /// </summary>
-        public static string PERMISSION {
-            get {
-                return ResourceManager.GetString("PERMISSION", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to profile.
-        /// </summary>
-        public static string PROFILE {
-            get {
-                return ResourceManager.GetString("PROFILE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to role.
-        /// </summary>
-        public static string ROLE {
-            get {
-                return ResourceManager.GetString("ROLE", resourceCulture);
+                return ResourceManager.GetString("KEY_USERNAME", resourceCulture);
             }
         }
     }

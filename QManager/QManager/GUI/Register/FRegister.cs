@@ -35,6 +35,8 @@ namespace QManager.GUI.Register
             string job_title = TextBoxJobTitle.Text;
         }
 
+
+
         private void ButtonRegister_Click(object sender, EventArgs e)
         {
             Register();
@@ -61,6 +63,11 @@ namespace QManager.GUI.Register
         }
 
         private void TextBoxDoBYear_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRegister_Load(object sender, EventArgs e)
         {
 
         }

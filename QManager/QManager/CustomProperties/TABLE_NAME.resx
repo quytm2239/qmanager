@@ -132,4 +132,7 @@
   <data name="PROFILE" xml:space="preserve">
     <value>profile</value>
   </data>
+  <data name="ROLE" xml:space="preserve">
+    <value>role</value>
+  </data>
 </root>

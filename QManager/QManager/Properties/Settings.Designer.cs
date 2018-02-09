@@ -26,72 +26,18 @@ namespace QManager.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("35.201.228.124")]
-        public string DBHost {
+        public string APIHost {
             get {
-                return ((string)(this["DBHost"]));
+                return ((string)(this["APIHost"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
-        public string DBPort {
+        [global::System.Configuration.DefaultSettingValueAttribute("1234")]
+        public string APIPort {
             get {
-                return ((string)(this["DBPort"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sale_manager")]
-        public string DBSchema {
-            get {
-                return ((string)(this["DBSchema"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sale")]
-        public string DBUser {
-            get {
-                return ((string)(this["DBUser"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("123456")]
-        public string DBPass {
-            get {
-                return ((string)(this["DBPass"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2")]
-        public uint DBMinPoolSize {
-            get {
-                return ((uint)(this["DBMinPoolSize"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
-        public uint DBMaxPoolSize {
-            get {
-                return ((uint)(this["DBMaxPoolSize"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public uint DBConnectionTimeout {
-            get {
-                return ((uint)(this["DBConnectionTimeout"]));
+                return ((string)(this["APIPort"]));
             }
         }
     }

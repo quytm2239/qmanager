@@ -117,43 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="DELETE_BY_ID" xml:space="preserve">
-    <value>DELETE FROM `account` WHERE id = ?id</value>
-  </data>
-  <data name="DELETE_BY_USERNAME" xml:space="preserve">
-    <value>DELETE FROM `account` WHERE account = ?account</value>
-  </data>
-  <data name="GET_ALL" xml:space="preserve">
-    <value>SELECT * FROM account</value>
-  </data>
-  <data name="GET_BY_ID" xml:space="preserve">
-    <value>SELECT * FROM account WHERE id = ?id</value>
-  </data>
-  <data name="INSERT" xml:space="preserve">
-    <value>INSERT INTO `account`(`username`,`password`,`email`,`status`,`role`) VALUES(?username,?password,?email,?status,?role)</value>
-  </data>
-  <data name="KEY_EMAIL" xml:space="preserve">
-    <value>?email</value>
-  </data>
-  <data name="KEY_ID" xml:space="preserve">
-    <value>?id</value>
+  <data name="API_LOGIN" xml:space="preserve">
+    <value>/public/login</value>
   </data>
   <data name="KEY_PASSWORD" xml:space="preserve">
-    <value>?password</value>
-  </data>
-  <data name="KEY_ROLE" xml:space="preserve">
-    <value>?role</value>
-  </data>
-  <data name="KEY_STATUS" xml:space="preserve">
-    <value>?status</value>
+    <value>password</value>
   </data>
   <data name="KEY_USERNAME" xml:space="preserve">
-    <value>?username</value>
-  </data>
-  <data name="UPDATE_BY_ID" xml:space="preserve">
-    <value>UPDATE `account` SET `username` = ?username,`password` = ?password,`email` = ?email,`status` = ?status,`role` = ?role WHERE `id` = ?id</value>
-  </data>
-  <data name="UPDATE_BY_USERNAME" xml:space="preserve">
-    <value>UPDATE `account` SET `username` = ?username,`password` = ?password,`email` = ?email,`status` = ?status,`role` = ?role WHERE `username` = ?username</value>
+    <value>username</value>
   </data>
 </root>
