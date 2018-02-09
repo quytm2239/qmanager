@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -17,7 +18,8 @@ namespace QManager.Services.HTTP_API
         private HTTPClientManager()
         {
             httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("Content-Type", "application/x-www-form-urlencoded");
+            httpClient.BaseAddress = new Uri(HOST_PORT);
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-www-form-urlencoded"));
         }
 
         public static HTTPClientManager Shared()
@@ -54,7 +56,7 @@ namespace QManager.Services.HTTP_API
         // RE-USE HTTP METHOD CALL
         public async Task<APIResponse> Get(string url, Dictionary<string,object> param)
         {
-            var response = await httpClient.GetAsync(HOST_PORT + url + CreateQueryStr(param));
+            var response = await httpClient.GetAsync(url + (param != null ? CreateQueryStr(param) : ""));
             APIResponse result = await CreateResponseObjAsync(response);
             return result;
         }
@@ -62,7 +64,7 @@ namespace QManager.Services.HTTP_API
         public async Task<APIResponse> Post(string url, Dictionary<string,string> param)
         {
             var content = new FormUrlEncodedContent(param);
-            var response = await httpClient.PostAsync(HOST_PORT + url, content);
+            var response = await httpClient.PostAsync(url, content);
             APIResponse result = await CreateResponseObjAsync(response);
             return result;
         }
@@ -70,15 +72,15 @@ namespace QManager.Services.HTTP_API
         public async Task<APIResponse> Put(string url, Dictionary<string, string> param)
         {
             var content = new FormUrlEncodedContent(param);
-            var response = await httpClient.PutAsync(HOST_PORT + url, content);
+            var response = await httpClient.PutAsync(url, content);
             APIResponse result = await CreateResponseObjAsync(response);
             return result;
         }
 
         public async Task<APIResponse> Delete(string url, Dictionary<string, string> param)
         {
-            var request = new HttpRequestMessage(HttpMethod.Delete, HOST_PORT + url) {
-                Content = new StringContent(JsonConvert.SerializeObject(param), Encoding.UTF8, "application/json")
+            var request = new HttpRequestMessage(HttpMethod.Delete, url) {
+                Content = new StringContent(JsonConvert.SerializeObject(param), Encoding.UTF8)
             };
             var response = await httpClient.SendAsync(request);
             APIResponse result = await CreateResponseObjAsync(response);
@@ -88,17 +90,21 @@ namespace QManager.Services.HTTP_API
         // CALL API FOR EACH BUSINESS CASE
         public async Task<APIResponse> Login(string username, string password)
         {
-            Dictionary<string, string> dictionary = new Dictionary<string, string>();
-            dictionary.Add(APIGlossary.KEY_USERNAME, username);
-            dictionary.Add(APIGlossary.KEY_PASSWORD, password);
+            Dictionary<string, string> dictionary = new Dictionary<string, string> {
+                { APIGlossary.KEY_USERNAME, username },
+                { APIGlossary.KEY_PASSWORD, password }
+            };
             APIResponse responseObj = await Post(APIGlossary.API_LOGIN, dictionary);
             if (responseObj.token != null) SetToken(responseObj.token);
             return responseObj;
         }
 
-        public void Logout()
+        public async Task<APIResponse> GetAllDepartment()
         {
-            ClearToken();
+            APIResponse responseObj = await Get(APIGlossary.API_GET_ALL_DEPARTMENT, null);
+            return responseObj;
         }
+
+        public void Logout() => ClearToken();
     }
 }

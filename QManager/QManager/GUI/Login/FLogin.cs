@@ -36,8 +36,9 @@ namespace QManager.GUI.Login
 
         private async void ButtonLogin_Click(object sender, EventArgs e)
         {
-            var obj = await HTTPClientManager.Shared().Login("admin", "thucgu");
-            Console.WriteLine(obj);
+            //var obj = await HTTPClientManager.Shared().Login("admin", "thucgu");
+            //Console.WriteLine(obj);
+            var obj2 = await HTTPClientManager.Shared().GetAllDepartment();
         }
     }
 }

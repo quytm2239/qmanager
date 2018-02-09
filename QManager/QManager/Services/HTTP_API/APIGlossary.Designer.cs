@@ -61,6 +61,15 @@ namespace QManager.Services.HTTP_API {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to /auth/all-department.
+        /// </summary>
+        internal static string API_GET_ALL_DEPARTMENT {
+            get {
+                return ResourceManager.GetString("API_GET_ALL_DEPARTMENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to /public/login.
         /// </summary>
         internal static string API_LOGIN {
