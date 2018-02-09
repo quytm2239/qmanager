@@ -86,5 +86,41 @@ namespace QManager.Services.HTTP_API {
                 return ResourceManager.GetString("KEY_USERNAME", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to data.
+        /// </summary>
+        internal static string RES_KEY_DATA {
+            get {
+                return ResourceManager.GetString("RES_KEY_DATA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to message.
+        /// </summary>
+        internal static string RES_KEY_MESSAGE {
+            get {
+                return ResourceManager.GetString("RES_KEY_MESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to success.
+        /// </summary>
+        internal static string RES_KEY_SUCCESS {
+            get {
+                return ResourceManager.GetString("RES_KEY_SUCCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to token.
+        /// </summary>
+        internal static string RES_KEY_TOKEN {
+            get {
+                return ResourceManager.GetString("RES_KEY_TOKEN", resourceCulture);
+            }
+        }
     }
 }

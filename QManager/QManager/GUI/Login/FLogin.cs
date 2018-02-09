@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QManager.BaseClass;
+using QManager.Services.HTTP_API;
 
 namespace QManager.GUI.Login
 {
@@ -33,9 +34,10 @@ namespace QManager.GUI.Login
 
         }
 
-        private void ButtonLogin_Click(object sender, EventArgs e)
+        private async void ButtonLogin_Click(object sender, EventArgs e)
         {
-
+            var obj = await HTTPClientManager.Shared().Login("admin", "thucgu");
+            Console.WriteLine(obj);
         }
     }
 }

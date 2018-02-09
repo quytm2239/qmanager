@@ -35,8 +35,7 @@ namespace QManager.GUI
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
             Console.WriteLine("MainScreen Loaded!");
-            FRegister fLogin = new FRegister
-            {
+            FLogin fLogin = new FLogin {
                 TopLevel = false,
                 Anchor = AnchorStyles.None
             };

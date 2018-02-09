@@ -67,6 +67,9 @@
     <Reference Include="MySql.Data, Version=6.10.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.6.10.6\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate, Version=5.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.5.0.3\lib\net461\NHibernate.dll</HintPath>
     </Reference>
@@ -157,6 +160,7 @@
       <DependentUpon>APIGlossary.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\HTTP_API\HTTPClientManager.cs" />
+    <Compile Include="Services\HTTP_API\HTTPResponse.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="GUI\MainScreen.cs">
       <SubType>Form</SubType>
