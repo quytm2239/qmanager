@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QManager.BaseClass;
 using QManager.Services.HTTP_API;
+using QManager.Model;
 
 namespace QManager.GUI.Login
 {
@@ -36,9 +37,20 @@ namespace QManager.GUI.Login
 
         private async void ButtonLogin_Click(object sender, EventArgs e)
         {
-            //var obj = await HTTPClientManager.Shared().Login("admin", "thucgu");
-            //Console.WriteLine(obj);
-            var obj2 = await HTTPClientManager.Shared().GetAllDepartment();
+            if (TextBoxUsername.Text == null || TextBoxUsername.Text.Length == 0
+                || TextBoxPassword.Text == null || TextBoxPassword.Text.Length == 0) {
+                ErrorDialog errorDialog = new ErrorDialog("Lỗi đăng nhập", "Vui lòng nhập tài khoản và mật khẩu!");
+                errorDialog.ShowDialog();
+                return;
+            }
+            var response = await HTTPClientManager.Shared().Login(TextBoxUsername.Text, TextBoxPassword.Text);
+            if (response.success) {
+                // process to profile screen
+            } else {
+                // show error dialog
+                ErrorDialog errorDialog = new ErrorDialog("Lỗi đăng nhập", response.message);
+                errorDialog.ShowDialog();
+            }
         }
     }
 }

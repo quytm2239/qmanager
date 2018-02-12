@@ -8,20 +8,21 @@ namespace QManager.Model
 {
     class Role : BaseModel
     {
-        public virtual String name { get; set; }
-        public virtual String description { get; set; }
-        public virtual Int64 deparment_id { get; set; }
+        public String name;
+        public String description;
+        public Int64 department_id;
 
         public Role()
         {
 
         }
 
-        public Role(string name, string description, Int64 deparment_id)
+        public Role(Int64 id, string name, string description, Int64 department_id, DateTime createdAt, DateTime updatedAt)
+            : base(id, createdAt, updatedAt)
         {
             this.name = name;
             this.description = description;
-            this.deparment_id = deparment_id;
+            this.department_id = department_id;
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QManager.GUI.Department
 {
-    public partial class AddDeparment : Form
+    public partial class AddDepartment : Form
     {
-        public AddDeparment()
+        public AddDepartment()
         {
             InitializeComponent();
         }

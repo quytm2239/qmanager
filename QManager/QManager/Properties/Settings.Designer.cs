@@ -40,5 +40,17 @@ namespace QManager.Properties {
                 return ((string)(this["APIPort"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string APIToken {
+            get {
+                return ((string)(this["APIToken"]));
+            }
+            set {
+                this["APIToken"] = value;
+            }
+        }
     }
 }

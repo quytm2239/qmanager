@@ -8,21 +8,22 @@ namespace QManager.Model
 {
     public class Permission : BaseModel
     {
-        public virtual Int64 function_id { get; set; }
-        public virtual int role { get; set; }
-        public virtual Int64 deparment_id { get; set; }
-        public virtual int permission { get; set; }
+        public Int64 function_id;
+        public int role;
+        public Int64 department_id;
+        public int permission_config;
 
         public Permission()
         {
         }
 
-        public Permission(long function_id, int role, long deparment_id, int permission)
+        public Permission(Int64 id, long function_id, int role, long department_id, int permission_config, DateTime createdAt, DateTime updatedAt) 
+            : base(id, createdAt, updatedAt)
         {
             this.function_id = function_id;
             this.role = role;
-            this.deparment_id = deparment_id;
-            this.permission = permission;
+            this.department_id = department_id;
+            this.permission_config = permission_config;
         }
     }
 }

@@ -4,13 +4,19 @@ namespace QManager.Model
 {
     public class BaseModel
     {
-        public virtual Int64 id { get; protected set; }
-        public virtual DateTime createdAt { get; protected set; }
-        public virtual DateTime updatedAt { get; protected set; }
+        public Int64 id;
+        public DateTime createdAt;
+        public DateTime updatedAt;
 
         public BaseModel()
         {
+        }
 
+        public BaseModel(Int64 id, DateTime createdAt, DateTime updatedAt)
+        {
+            this.id = id;
+            this.createdAt = createdAt;
+            this.updatedAt = updatedAt;
         }
     }
 }

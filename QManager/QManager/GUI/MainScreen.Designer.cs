@@ -37,6 +37,7 @@
             this.PictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.LabelProfileInfo = new System.Windows.Forms.Label();
             this.ButtonSale = new System.Windows.Forms.Button();
+            this.ButtonLogout = new System.Windows.Forms.Button();
             this.RightPanel = new System.Windows.Forms.Panel();
             this.TablePanelRight = new System.Windows.Forms.TableLayoutPanel();
             this.TablePanelStatusBar = new System.Windows.Forms.TableLayoutPanel();
@@ -45,6 +46,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAvatar)).BeginInit();
             this.RightPanel.SuspendLayout();
             this.TablePanelRight.SuspendLayout();
+            this.TablePanelStatusBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // LeftPanel
@@ -116,6 +118,16 @@
             this.ButtonSale.Name = "ButtonSale";
             this.ButtonSale.UseVisualStyleBackColor = false;
             // 
+            // ButtonLogout
+            // 
+            this.ButtonLogout.BackColor = System.Drawing.SystemColors.Info;
+            resources.ApplyResources(this.ButtonLogout, "ButtonLogout");
+            this.ButtonLogout.FlatAppearance.BorderSize = 0;
+            this.ButtonLogout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ButtonLogout.Name = "ButtonLogout";
+            this.ButtonLogout.UseVisualStyleBackColor = false;
+            this.ButtonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
+            // 
             // RightPanel
             // 
             this.RightPanel.Controls.Add(this.TablePanelRight);
@@ -133,6 +145,7 @@
             // 
             this.TablePanelStatusBar.BackColor = System.Drawing.SystemColors.MenuHighlight;
             resources.ApplyResources(this.TablePanelStatusBar, "TablePanelStatusBar");
+            this.TablePanelStatusBar.Controls.Add(this.ButtonLogout, 1, 0);
             this.TablePanelStatusBar.Name = "TablePanelStatusBar";
             // 
             // MainScreen
@@ -150,6 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxAvatar)).EndInit();
             this.RightPanel.ResumeLayout(false);
             this.TablePanelRight.ResumeLayout(false);
+            this.TablePanelStatusBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -167,5 +181,6 @@
         private System.Windows.Forms.Button ButtonSale;
         private System.Windows.Forms.TableLayoutPanel TablePanelRight;
         private System.Windows.Forms.TableLayoutPanel TablePanelStatusBar;
+        private System.Windows.Forms.Button ButtonLogout;
     }
 }

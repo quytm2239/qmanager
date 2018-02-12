@@ -4,15 +4,16 @@ namespace QManager.Model
 {
     public class Department : BaseModel
     {
-        public virtual String name { get; set; }
-        public virtual String description { get; set; }
+        public String name;
+        public String description;
 
         public Department()
         {
 
         }
 
-        public Department(string name, string description)
+        public Department(Int64 id, string name, string description, DateTime createdAt, DateTime updatedAt)
+            : base(id, createdAt, updatedAt)
         {
             this.name = name;
             this.description = description;

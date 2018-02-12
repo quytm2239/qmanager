@@ -8,24 +8,25 @@ namespace QManager.Model
 {
     public class Profile : BaseModel
     {
-        public virtual Int64 account_id { get; set; }
-        public virtual String full_name { get; set; }
-        public virtual int gender { get; set; }
-        public virtual String dob { get; set; }
-        public virtual String phone { get; set; }
-        public virtual String address { get; set; }
-        public virtual Int64 department_id { get; set; }
+        public Int64 account_id;
+        public String full_name;
+        public int gender;
+        public String dob;
+        public String phone;
+        public String address;
+        public Int64 department_id;
 
-        public virtual String job_title { get; set; }
-        public virtual String join_date { get; set; }
-        public virtual String contract_code { get; set; }
-        public virtual String staff_code { get; set; }
+        public String job_title;
+        public String join_date;
+        public String contract_code;
+        public String staff_code;
 
         public Profile()
         {
         }
 
-        public Profile(string full_name, int gender, string dob, string phone, string address, long department_id, string job_title, string join_date, string contract_code, string staff_code)
+        public Profile(Int64 id, string full_name, int gender, string dob, string phone, string address, long department_id, string job_title, string join_date, string contract_code, string staff_code, DateTime createdAt, DateTime updatedAt)
+            : base(id, createdAt, updatedAt)
         {
             this.full_name = full_name;
             this.gender = gender;

@@ -8,14 +8,15 @@ namespace QManager.Model
 {
     public class Function : BaseModel
     {
-        public virtual String name { get; set; }
-        public virtual String description { get; set; }
+        public String name;
+        public String description;
 
         public Function()
         {
         }
 
-        public Function(string name, string description)
+        public Function(Int64 id, string name, string description, DateTime createdAt, DateTime updatedAt)
+            : base(id, createdAt, updatedAt)
         {
             this.name = name;
             this.description = description;

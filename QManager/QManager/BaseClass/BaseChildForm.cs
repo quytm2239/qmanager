@@ -8,6 +8,8 @@ namespace QManager.BaseClass
         public BaseChildForm()
         {
             Load += new EventHandler(BaseChildForm_Load);
+            TopLevel = false;
+            Anchor = AnchorStyles.None;
         }
 
         private void BaseChildForm_Load(object sender, EventArgs e)

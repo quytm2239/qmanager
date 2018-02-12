@@ -9,18 +9,19 @@ namespace QManager.Model
     //https://www.devart.com/dotconnect/mysql/docs/Devart.Data.MySql~Devart.Data.MySql.MySqlType.html#
     public class Account : BaseModel
     {
-        public virtual String username { get; set; }
-        public virtual String password { get; set; }
-        public virtual String email { get; set; }
-        public virtual int status { get; set; }
-        public virtual int role { get; set; }
+        public String username;
+        public String password;
+        public String email;
+        public int status;
+        public int role;
 
         public Account()
         {
 
         }
 
-        public Account(string username, string password, string email, int status, int role)
+        public Account(Int64 id, string username, string password, string email, int status, int role, DateTime createdAt, DateTime updatedAt)
+            : base(id, createdAt, updatedAt)
         {
             this.username = username;
             this.password = password;

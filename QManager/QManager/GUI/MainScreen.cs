@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using QManager.Model;
 using QManager.GUI.Login;
 using QManager.GUI.Register;
+using QManager.Services.HTTP_API;
+
 namespace QManager.GUI
 {
     public partial class MainScreen : Form
@@ -19,15 +21,7 @@ namespace QManager.GUI
         public MainScreen()
         {
             InitializeComponent();
-            /*panel.Controls.Clear();
-            form2 myForm = new form2();
-            myForm.FormBorderStyle = FormBorderStyle.None;
-            myForm.TopLevel = false;
-            myForm.AutoScroll = true;
-            panel.Controls.Add(myForm);
-            myForm.Show();
-        */
-            this.FormClosing += MainScreen_FormClosing;
+            FormClosing += MainScreen_FormClosing;
         }
 
         private void MainScreen_FormClosing(object sender, FormClosingEventArgs e) => Program.IsAppClosed = true;
@@ -35,12 +29,8 @@ namespace QManager.GUI
         private void MainScreen_Load(object sender, System.EventArgs e)
         {
             Console.WriteLine("MainScreen Loaded!");
-            FLogin fLogin = new FLogin {
-                TopLevel = false,
-                Anchor = AnchorStyles.None
-            };
-            TablePanelRight.Controls.Add(fLogin,0,0);
-            fLogin.Show();
+            var listControl = TablePanelRight.Controls;
+            OpenLoginScreen();
         }
 
         private void LeftMenu_Paint(object sender, PaintEventArgs e)
@@ -84,6 +74,20 @@ namespace QManager.GUI
                     });
                 }
             }
+        }
+
+        private void ButtonLogout_Click(object sender, EventArgs e)
+        {
+            HTTPClientManager.Shared().Logout();
+            TablePanelRight.Controls.RemoveAt(1);
+            ButtonLogout.Visible = false;
+        }
+
+        private void OpenLoginScreen()
+        {
+            FLogin fLogin = new FLogin();
+            TablePanelRight.Controls.Add(fLogin, 0, 0);
+            fLogin.Show();
         }
     }
 }

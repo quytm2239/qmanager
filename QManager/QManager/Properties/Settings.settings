@@ -8,5 +8,8 @@
     <Setting Name="APIPort" Type="System.String" Scope="Application">
       <Value Profile="(Default)">1234</Value>
     </Setting>
+    <Setting Name="APIToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

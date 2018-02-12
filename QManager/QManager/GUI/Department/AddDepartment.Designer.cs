@@ -1,6 +1,6 @@
 ﻿namespace QManager.GUI.Department
 {
-    partial class AddDeparment
+    partial class AddDepartment
     {
         /// <summary>
         /// Required designer variable.
@@ -27,9 +27,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // AddDepartment
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "AddDeparment";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "AddDepartment";
+            this.Text = "AddDepartment";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

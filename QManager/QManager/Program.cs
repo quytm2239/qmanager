@@ -9,13 +9,12 @@ namespace QManager
         /// The main entry point for the application.
         /// </summary>
         /// 
-
         public static bool IsAppClosed = false;
+        public static AppStatus AppStatus = new AppStatus();
 
         [STAThread]
         static void Main()
         {
-            //DBConnection.GetInstance().CheckConnectity();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainScreen());
