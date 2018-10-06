@@ -74,25 +74,46 @@ namespace QManager.Services.HTTP_API
         #region RE-USE HTTP METHOD 
         public async Task<APIResponse> Get(string url, Dictionary<string,object> param)
         {
-            var response = await httpClient.GetAsync(url + (param != null ? CreateQueryStr(param) : ""));
-            APIResponse result = await CreateResponseObjAsync(response);
-            return result;
+            try
+            {
+                var response = await httpClient.GetAsync(url + (param != null ? CreateQueryStr(param) : ""));
+                APIResponse result = await CreateResponseObjAsync(response);
+                return result;
+            }
+            catch (HttpRequestException ex)
+            {
+                return new APIResponse(false, ex.InnerException.Message);
+            }
         }
 
         public async Task<APIResponse> Post(string url, Dictionary<string,string> param)
         {
             var content = new FormUrlEncodedContent(param);
-            var response = await httpClient.PostAsync(url, content);
-            APIResponse result = await CreateResponseObjAsync(response);
-            return result;
+            try
+            {
+                var response = await httpClient.PostAsync(url, content);
+                APIResponse result = await CreateResponseObjAsync(response);
+                return result;
+            }
+            catch (HttpRequestException ex)
+            {
+                return new APIResponse(false,ex.InnerException.Message);
+            }
         }
 
         public async Task<APIResponse> Put(string url, Dictionary<string, string> param)
         {
             var content = new FormUrlEncodedContent(param);
-            var response = await httpClient.PutAsync(url, content);
-            APIResponse result = await CreateResponseObjAsync(response);
-            return result;
+            try
+            {
+                var response = await httpClient.PutAsync(url, content);
+                APIResponse result = await CreateResponseObjAsync(response);
+                return result;
+            }
+            catch (HttpRequestException ex)
+            {
+                return new APIResponse(false, ex.InnerException.Message);
+            }
         }
 
         public async Task<APIResponse> Delete(string url, Dictionary<string, string> param)
@@ -100,9 +121,15 @@ namespace QManager.Services.HTTP_API
             var request = new HttpRequestMessage(HttpMethod.Delete, url) {
                 Content = new StringContent(JsonConvert.SerializeObject(param), Encoding.UTF8)
             };
-            var response = await httpClient.SendAsync(request);
-            APIResponse result = await CreateResponseObjAsync(response);
-            return result;
+            try {
+                var response = await httpClient.SendAsync(request);
+                APIResponse result = await CreateResponseObjAsync(response);
+                return result;
+            }
+            catch (HttpRequestException ex)
+            {
+                return new APIResponse(false, ex.InnerException.Message);
+            }
         }
         #endregion
 
@@ -116,7 +143,7 @@ namespace QManager.Services.HTTP_API
                 { APIGlossary.KEY_PASSWORD, password }
             };
             APIResponse responseObj = await Post(APIGlossary.API_LOGIN, dictionary);
-            if (responseObj.token.Length > 0) SetToken(responseObj.token);
+            if (responseObj.token != null && responseObj.token.Length > 0) SetToken(responseObj.token);
             return responseObj;
         }
         #endregion

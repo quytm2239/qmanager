@@ -22,6 +22,12 @@ namespace QManager.Services.HTTP_API
             message = obj[APIGlossary.RES_KEY_MESSAGE].Value<string>();
             data = obj[APIGlossary.RES_KEY_DATA] != null ? (obj[APIGlossary.RES_KEY_DATA]).ToObject<List<Object>>() : new List<Object>();
             token = obj[APIGlossary.RES_KEY_TOKEN] != null ? (obj[APIGlossary.RES_KEY_TOKEN]).ToObject<string>() : "";
-         }
+        }
+
+        public APIResponse(bool success, string message)
+        {
+            this.success = success;
+            this.message = message;
+        }
     }
 }
